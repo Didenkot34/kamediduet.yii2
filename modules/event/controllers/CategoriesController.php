@@ -80,22 +80,22 @@ class CategoriesController extends Controller
             ->all();
 
         $comment = new SaveComment();
-        if ($comment->load(Yii::$app->request->post())) {
-            if ($comment->saveComment()) {
-                if (!Yii::$app->request->isPjax) {
-                    $this->redirect('single-post?id=' . $comment->id_posts);
-                }
-            }
-            return
-                ' <div class="col-sm-6 col-sm-offset-3">'
-                . Alert::widget([
-                    'options' => [
-                        'class' => 'alert-info',
-                    ],
-                    'body' => $comment->users_name . ', Ваш Комментарий успешно отправлен! Спасибо за отзыв!',
-                ]) .
-                '</div>';
-        }
+//        if ($comment->load(Yii::$app->request->post())) {
+//            if ($comment->saveComment()) {
+//                if (!Yii::$app->request->isPjax) {
+//                    $this->redirect('single-post?id=' . $comment->id_posts);
+//                }
+//            }
+//            return
+//                ' <div class="col-sm-6 col-sm-offset-3">'
+//                . Alert::widget([
+//                    'options' => [
+//                        'class' => 'alert-info',
+//                    ],
+//                    'body' => $comment->users_name . ', Ваш Комментарий успешно отправлен! Спасибо за отзыв!',
+//                ]) .
+//                '</div>';
+//        }
 
 
         return $this->render('single-post', [
@@ -120,7 +120,15 @@ class CategoriesController extends Controller
                     $this->redirect('single-post?id=' . $comment->id_posts);
                 }
             }
-            return 'Все прошло хорошо';
+            return
+                ' <div class="col-sm-6 col-sm-offset-3">'
+                . Alert::widget([
+                    'options' => [
+                        'class' => 'alert-info',
+                    ],
+                    'body' => $comment->users_name . ', Ваш Комментарий успешно отправлен! Спасибо за отзыв!',
+                ]) .
+                '</div>';
         }
     }
 

@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\widgets\Pjax;
 use yii\bootstrap\Alert;
+
 /* @var $this yii\web\View */
 
 $this->title = [
@@ -62,7 +63,7 @@ $this->title = [
 <!-- Contact start -->
 <section id="contact" class="pfblock">
     <div class="container">
-        <?php Pjax::begin(['id' => 'my-pjax']); ?>
+        <?php Pjax::begin(['id' => 'my-pjax', 'enablePushState' => false]); ?>
         <div class="row">
 
             <div class="col-sm-6 col-sm-offset-3">
@@ -87,34 +88,34 @@ $this->title = [
 
             <div class="col-sm-6 col-sm-offset-3">
 
-                    <?php
-                    $form = ActiveForm::begin([
-                        'id' => 'comment-form',
-//                        'action' => ['/event/categories/save-comment'],
-                    'action' => ['/event/categories/single-post?id='.$post->id_posts],
-                        'options' => [
-                            'data-pjax' => true,
-                            'class' => 'form-horizontal'
-                        ]
-                    ]);
-                    ?>
-                    <div class="wow fadeInUp" data-wow-delay=".1s">
-                        <?= $form->field($comment, 'id_posts')->hiddenInput(['value' => $post->id_posts])->label(false) ?>
-                    </div>
-                    <div class="wow fadeInUp" data-wow-delay=".2s">
-                        <?= $form->field($comment, 'users_name')->input(['class' => 'form-group wow fadeInUp']) ?>
-                    </div>
-                    <div class="wow fadeInUp" data-wow-delay=".3s">
-                        <?= $form->field($comment, 'users_last_name')->input(['class' => 'form-group wow fadeInUp', ' data-wow-delay' => '.1s']) ?>
-                    </div>
-                    <div class="wow fadeInUp" data-wow-delay=".4s">
-                        <?= $form->field($comment, 'users_email')->input(['class' => 'form-group wow fadeInUp', ' data-wow-delay' => '.2s']) ?>
-                    </div>
-                    <div class="wow fadeInUp" data-wow-delay=".6s">
-                        <?= $form->field($comment, 'comments')->textarea(['rows' => 7]) ?>
-                    </div>
-                    <?= Html::submitButton('Оставить отзыв', ['class' => 'btn btn-lg btn-block wow fadeInUp', ' data-wow-delay' => '.5s', 'name' => 'comment-button']) ?>
-                    <?php ActiveForm::end() ?>
+                <?php
+                $form = ActiveForm::begin([
+                    'id' => 'comment-form',
+                    'action' => ['/event/categories/save-comment'],
+//                    'action' => ['/event/categories/single-post?id='.$post->id_posts],
+                    'options' => [
+                        'data-pjax' => true,
+                        'class' => 'form-horizontal'
+                    ]
+                ]);
+                ?>
+                <div class="wow fadeInUp" data-wow-delay=".1s">
+                    <?= $form->field($comment, 'id_posts')->hiddenInput(['value' => $post->id_posts])->label(false) ?>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay=".2s">
+                    <?= $form->field($comment, 'users_name')->input(['class' => 'form-group wow fadeInUp']) ?>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay=".3s">
+                    <?= $form->field($comment, 'users_last_name')->input(['class' => 'form-group wow fadeInUp', ' data-wow-delay' => '.1s']) ?>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay=".4s">
+                    <?= $form->field($comment, 'users_email')->input(['class' => 'form-group wow fadeInUp', ' data-wow-delay' => '.2s']) ?>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay=".6s">
+                    <?= $form->field($comment, 'comments')->textarea(['rows' => 7]) ?>
+                </div>
+                <?= Html::submitButton('Оставить отзыв', ['class' => 'btn btn-lg btn-block wow fadeInUp', ' data-wow-delay' => '.5s', 'name' => 'comment-button']) ?>
+                <?php ActiveForm::end() ?>
 
             </div>
 
