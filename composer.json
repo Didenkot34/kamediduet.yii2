@@ -1,0 +1,16 @@
+{
+    "name": "didenkot34/kamediduetcom.yii",
+    "require": {
+        "yiisoft/yii": "dev-master",
+        "yiisoft/yii2-jui": "^2.0@dev",
+        "yiisoft/yii2-bootstrap": "^2.0@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Didenko Yura",
+            "email": "didenkot34@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

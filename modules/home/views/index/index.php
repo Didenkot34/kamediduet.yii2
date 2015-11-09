@@ -1,0 +1,368 @@
+<!-- Services start -->
+
+<section id="services" class="pfblock pfblock-gray">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <div class="pfblock-header wow fadeInUp">
+                    <?= yii\helpers\Html::tag('h2',yii\helpers\Html::a('Наши услуги', ['/event/categories/events'], ['class' => 'pfblock-title fa_color']),['class'=>'iconbox-title'])?>
+
+                    <div class="pfblock-line"></div>
+                    <div class="pfblock-subtitle">
+                        No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
+                        light, to open people’s eyes, to reveal the marvels around.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-3">
+
+                <div class="iconbox wow slideInLeft ">
+                    <div class="iconbox-icon">
+                        <span class="fa_color fa fa-venus-mars fa-3x"></span>
+                    </div>
+                    <div class="iconbox-text">
+                        <?= yii\helpers\Html::tag('h3',yii\helpers\Html::a('Свадьбы', ['/event/categories/posts','id'=>1], ['class' => 'btn btn-outline btn-info']),['class'=>'iconbox-title'])?>
+                        <div class="iconbox-desc">
+                            Good things come to those who wait, but only the things left by those who hustle
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-3">
+
+                <div class="iconbox wow slideInLeft">
+                    <div class="iconbox-icon">
+                        <span class="fa_color fa fa-users fa-3x"></span>
+                    </div>
+                    <div class="iconbox-text">
+                        <?= yii\helpers\Html::tag('h3',yii\helpers\Html::a('Корпоративы', ['/event/categories/posts','id'=>2], ['class' => 'btn btn-outline btn-info']),['class'=>'iconbox-title'])?>
+
+                        <div class="iconbox-desc">
+                            Good things come to those who wait, but only the things left by those who hustle
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-3">
+
+                <div class="iconbox wow slideInRight">
+                    <div class="iconbox-icon">
+                        <span class="fa_color fa fa-birthday-cake fa-3x"></span>
+                    </div>
+                    <div class="iconbox-text">
+                        <?= yii\helpers\Html::tag('h3',yii\helpers\Html::a('Дни Рождения', ['/event/categories/posts','id'=>3], ['class' => 'btn btn-outline btn-info']),['class'=>'iconbox-title'])?>
+
+                        <div class="iconbox-desc">
+                            Good things come to those who wait, but only the things left by those who hustle
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-3">
+
+                <div class="iconbox wow slideInRight">
+                    <div class="iconbox-icon">
+                        <span class="fa_color fa fa-bell-o fa-3x"></span>
+                    </div>
+                    <div class="iconbox-text">
+                        <?= yii\helpers\Html::tag('h3',yii\helpers\Html::a('Выпускные', ['/event/categories/posts','id'=>4], ['class' => 'btn btn-outline btn-info']),['class'=>'iconbox-title'])?>
+
+                        <div class="iconbox-desc">
+                            Good things come to those who wait, but only the things left by those who hustle
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</section>
+
+<!-- Services end -->
+
+<!-- Portfolio start -->
+
+<section id="portfolio" class="pfblock">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <div class="pfblock-header wow fadeInUp">
+                    <h2 class="pfblock-title">Последние мероприятия</h2>
+
+                    <div class="pfblock-line"></div>
+                    <div class="pfblock-subtitle">
+                        No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
+                        light, to open people’s eyes, to reveal the marvels around.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- .row -->
+
+
+        <div class="row ">
+<?php foreach($posts as $post): ?>
+            <div class="col-md-4">
+
+                <div class="grid wow zoomIn">
+
+                    <figure class="effect-bubba">
+                        <img class="img-thumbnail" src="/images/event/category<?=$post->id_categories?>/post<?=$post->id_posts?>/background.jpg" alt="img01"/>
+                        <figcaption>
+                            <h2><?= yii\helpers\Html::a($post->title, ['/event/categories/single-post','id'=>$post->id_posts], ['class' => 'btn btn-outline btn-default']) ?></h2>
+
+                            <?= yii\helpers\Html::tag('p', $post->short_discription)?>
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+            </div>
+<?php endforeach; ?>
+        </div>
+
+
+    </div>
+    <!-- .contaier -->
+
+</section>
+
+<!-- Portfolio end -->
+
+<!-- Skills start -->
+
+<section class="pfblock pfblock-gray" id="skills">
+
+    <div class="container">
+
+        <div class="row skills">
+
+            <div class="row">
+
+                <div class="col-sm-6 col-sm-offset-3">
+
+                    <div class="pfblock-header wow fadeInUp">
+                        <h2 class="pfblock-title">My Skills</h2>
+
+                        <div class="pfblock-line"></div>
+                        <div class="pfblock-subtitle">
+                            No one lights a lamp in order to hide it behind the door: the purpose of light is to create
+                            more light, to open people’s eyes, to reveal the marvels around.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- .row -->
+
+            <div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="100" class="chart easyPieChart heart"
+                              style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="fa fa-heart fa-2x animated pulse"></span>
+                        </span>
+
+                <h3 class="text-center">Programming</h3>
+            </div>
+            <div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="90" class="chart easyPieChart"
+                              style="width: 140px; height: 140px; line-height: 140px;">
+                            <span><i class="fa fa-battery-half fa-"></i></span>
+                        </span>
+
+                <h3 class="text-center">Design</h3>
+            </div>
+            <div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="85" class="chart easyPieChart"
+                              style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">85</span>
+                        </span>
+
+                <h3 class="text-center">Marketing</h3>
+            </div>
+            <div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="95" class="chart easyPieChart"
+                              style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">95</span>
+                        </span>
+
+                <h3 class="text-center">UI / UX</h3>
+            </div>
+
+        </div>
+        <!--End row -->
+
+    </div>
+
+</section>
+
+<!-- Skills end -->
+
+<!-- CallToAction start -->
+
+<section class="calltoaction">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12 col-lg-12">
+                <h2 class="wow slideInRight" data-wow-delay=".1s">ТЕБЕ СКУЧНО И ОДИНОКО?</h2>
+
+                <div class="calltoaction-decription wow slideInLeft" data-wow-delay=".5s">
+                    закажи себе на праздник камеди дует "Жуль и Верн"
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-12 calltoaction-btn wow slideInDown" data-wow-delay=".7s">
+                <a href="#contact" class="btn btn-lg">Закажи нас</a>
+            </div>
+
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</section>
+
+<!-- CallToAction end -->
+
+<!-- Testimonials start -->
+
+<section id="testimonials" class="pfblock pfblock-gray">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <div class="pfblock-header wow fadeInUp">
+                    <?= yii\helpers\Html::tag('h2', 'Отзывы о нашей работе',['class'=>'pfblock-title'])?>
+
+                    <div class="pfblock-line"></div>
+                    <div class="pfblock-subtitle">
+                        No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
+                        light, to open people’s eyes, to reveal the marvels around.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- .row -->
+
+        <div class="row">
+
+            <div id="cbp-qtrotator" class="cbp-qtrotator">
+                <div class="cbp-qtcontent">
+                    <img class="img-thumbnail" src="assetIndex/images_index/client-1.jpg" alt="client-1"/>
+                    <blockquote>
+                        <p>Work with John was a pleasure. He understood exactly what I wanted and created an awesome
+                            site for my company.Work with John was a pleasure. He understood exactly what I wanted and
+                            created an awesome site for my company.</p>
+                        <footer>Pino Caruso</footer>
+                    </blockquote>
+                </div>
+                <div class="cbp-qtcontent">
+                    <img class="img-thumbnail" src="assetIndex/images_index/client-2.jpg" alt="client-2"/>
+                    <blockquote>
+                        <p>I'm really happy with the results. Get 100% satisfaction is difficult but Alex got it without
+                            problems.</p>
+                        <footer>Jane Doe</footer>
+                    </blockquote>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- .row -->
+
+
+    </div>
+    <!-- .row -->
+</section>
+
+<!-- Testimonial end -->
+
+
+<!-- Contact start -->
+
+<section id="contact" class="pfblock">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <div class="pfblock-header">
+                    <h2 class="pfblock-title">Drop me a line</h2>
+
+                    <div class="pfblock-line"></div>
+                    <div class="pfblock-subtitle">
+                        No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
+                        light, to open people’s eyes, to reveal the marvels around.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- .row -->
+
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <form id="contact-form" role="form">
+                    <div class="ajax-hidden">
+                        <div class="form-group wow fadeInUp">
+                            <label class="sr-only" for="c_name">Name</label>
+                            <input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
+                        </div>
+
+                        <div class="form-group wow fadeInUp" data-wow-delay=".1s">
+                            <label class="sr-only" for="c_email">Email</label>
+                            <input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
+                        </div>
+
+                        <div class="form-group wow fadeInUp" data-wow-delay=".2s">
+                            <textarea class="form-control" id="c_message" name="c_message" rows="7"
+                                      placeholder="Message"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send
+                            Message
+                        </button>
+                    </div>
+                    <div class="ajax-response"></div>
+                </form>
+
+            </div>
+
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</section>
+
+<!-- Contact end -->
+
