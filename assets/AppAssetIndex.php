@@ -36,6 +36,7 @@ class AppAssetIndex extends AssetBundle
         'assetIndex/js_index/waypoints.min.js',
         'assetIndex/js_index/jquery.cbpQTRotator.js',
         'assetIndex/js_index/custom.js',
+        'assetIndex/js_index/comment.js',
         'assetPiccolo/js/jquery.flexslider.js',
         'assetPiccolo/js/my.js',
     ];

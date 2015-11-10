@@ -3,13 +3,11 @@
 namespace app\modules\event\controllers;
 
 use Yii;
-use yii\web\View;
 use app\models\Categories;
 use app\models\Posts;
 use app\models\Comments;
 use app\models\SaveComment;
 use yii\web\Controller;
-use yii\bootstrap\Alert;
 
 class CategoriesController extends Controller
 {
@@ -78,25 +76,10 @@ class CategoriesController extends Controller
         $saved_comments = Comments::find()
             ->where(['id_posts' => $id])
             ->all();
-
+        /**
+         * return Model SaveComment
+         */
         $comment = new SaveComment();
-//        if ($comment->load(Yii::$app->request->post())) {
-//            if ($comment->saveComment()) {
-//                if (!Yii::$app->request->isPjax) {
-//                    $this->redirect('single-post?id=' . $comment->id_posts);
-//                }
-//            }
-//            return
-//                ' <div class="col-sm-6 col-sm-offset-3">'
-//                . Alert::widget([
-//                    'options' => [
-//                        'class' => 'alert-info',
-//                    ],
-//                    'body' => $comment->users_name . ', Ваш Комментарий успешно отправлен! Спасибо за отзыв!',
-//                ]) .
-//                '</div>';
-//        }
-
 
         return $this->render('single-post', [
             'post' => $post,
@@ -114,34 +97,12 @@ class CategoriesController extends Controller
     public function actionSaveComment()
     {
         $comment = new SaveComment();
-        if ($comment->load(Yii::$app->request->post())) {
+        if ($comment->load(Yii::$app->request->post()) && $comment->validate()) {
             if ($comment->saveComment()) {
-                if (!Yii::$app->request->isPjax) {
-                    $this->redirect('single-post?id=' . $comment->id_posts);
-                }
+                return json_encode(['name'=>$comment->users_name]);
+            } else {
+                return json_encode(['name'=>false]);
             }
-            return
-                ' <div class="col-sm-6 col-sm-offset-3">'
-                . Alert::widget([
-                    'options' => [
-                        'class' => 'alert-info',
-                    ],
-                    'body' => $comment->users_name . ', Ваш Комментарий успешно отправлен! Спасибо за отзыв!',
-                ]) .
-                '</div>';
-        }
-    }
-
-    public function actionComment()
-    {
-        $comment = new SaveComment();
-
-        if ($comment->load(Yii::$app->request->post())) {
-            $comment->saveComment();
-
-            return $this->render('save-comment', ['comment' => $comment]);
-        } else {
-            return $this->render('comment', ['comment' => $comment]);
         }
     }
 

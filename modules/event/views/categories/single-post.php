@@ -44,7 +44,7 @@ $this->title = [
             <div class="pfblock-line"></div>
             <div class="col-sm-10 col-sm-offset-1">
 
-                <div class="flexslider wow fadeInUpBig">
+                <div class="flexslider wow fadeInRight">
                     <ul class="slides">
                         <?php foreach ($img as $number) : ?>
                             <li>
@@ -61,13 +61,10 @@ $this->title = [
 
 <!-- Testimonial end -->
 <!-- Contact start -->
-<section id="contact" class="pfblock">
+<section id="comment" class="pfblock">
     <div class="container">
-        <?php Pjax::begin(['id' => 'my-pjax', 'enablePushState' => false]); ?>
         <div class="row">
-
             <div class="col-sm-6 col-sm-offset-3">
-
                 <div class="pfblock-header">
                     <h2 class="pfblock-title">Оставить отзыв</h2>
 
@@ -78,23 +75,16 @@ $this->title = [
                         насколько именно Вам понравилась наша компания!
                     </div>
                 </div>
-
             </div>
-
         </div>
         <!-- .row -->
 
         <div class="row">
-
             <div class="col-sm-6 col-sm-offset-3">
-
                 <?php
                 $form = ActiveForm::begin([
                     'id' => 'comment-form',
-                    'action' => ['/event/categories/save-comment'],
-//                    'action' => ['/event/categories/single-post?id='.$post->id_posts],
                     'options' => [
-                        'data-pjax' => true,
                         'class' => 'form-horizontal'
                     ]
                 ]);
@@ -116,14 +106,27 @@ $this->title = [
                 </div>
                 <?= Html::submitButton('Оставить отзыв', ['class' => 'btn btn-lg btn-block wow fadeInUp', ' data-wow-delay' => '.5s', 'name' => 'comment-button']) ?>
                 <?php ActiveForm::end() ?>
-
             </div>
-
         </div>
         <!-- .row -->
-        <?php Pjax::end(); ?>
     </div>
     <!-- .container -->
 </section>
 
 <!-- Contact end -->
+<section id="alert-comment" class="pfblock hidden">
+    <div class="container">
+        <div class="row">
+            '
+            <div class="col-sm-6 col-sm-offset-3">'
+                <?= Alert::widget([
+                    'options' => [
+                        'class' => 'alert-info',
+                    ],
+                    'body' => '<strong id="commentUserName"></strong>, Ваш Комментарий успешно отправлен! Спасибо за отзыв!',
+                ])
+                ?>
+            </div>
+        </div>
+    </div>
+</section>

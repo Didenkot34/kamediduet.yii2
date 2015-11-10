@@ -88,7 +88,7 @@ AppAssetIndex::register($this);
                     <li><a href="/event/categories/events">Услуги</a></li>
                     <li><a href="#title"><?=$this->title['title']?></a></li>
                     <li><a href="#portfolio">Фотографии</a></li>
-                    <li><a href="#contact">Оставить отзыв</a></li>
+                    <li><a href="#comment">Оставить отзыв</a></li>
                 </ul>
             </div>
 
