@@ -16,9 +16,7 @@ $this->title = [
 <section id="title" class="pfblock">
     <div class="container">
         <div class="row">
-
             <div class="col-sm-6 col-sm-offset-3">
-
                 <div class="pfblock-header wow fadeInUp">
                     <?= Html::tag('h2', $post->title, ['class' => 'pfblock-title']) ?>
                     <div class="pfblock-line"></div>
@@ -26,9 +24,7 @@ $this->title = [
                         <?= $post->discription ?>
                     </div>
                 </div>
-
             </div>
-
         </div>
         <!-- .row -->
     </div>
@@ -36,14 +32,11 @@ $this->title = [
 </section>
 <!-- Portfolio end -->
 <section id="portfolio" class="pfblock pfblock-gray">
-
     <div class="container">
-
         <div class="row">
             <?= Html::tag('h2', 'portfolio', ['class' => 'pfblock-title text-center']) ?>
             <div class="pfblock-line"></div>
             <div class="col-sm-10 col-sm-offset-1">
-
                 <div class="flexslider wow fadeInRight">
                     <ul class="slides">
                         <?php foreach ($img as $number) : ?>
@@ -58,9 +51,9 @@ $this->title = [
         </div>
         <!-- .container-->
 </section>
-
 <!-- Testimonial end -->
-<!-- Contact start -->
+
+<!-- Comment start -->
 <section id="comment" class="pfblock">
     <div class="container">
         <div class="row">
@@ -78,7 +71,6 @@ $this->title = [
             </div>
         </div>
         <!-- .row -->
-
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
                 <?php
@@ -112,8 +104,8 @@ $this->title = [
     </div>
     <!-- .container -->
 </section>
-
-<!-- Contact end -->
+<!-- Comment end -->
+<!-- Alert Comment start -->
 <section id="alert-comment" class="pfblock hidden">
     <div class="container">
         <div class="row">
@@ -130,3 +122,4 @@ $this->title = [
         </div>
     </div>
 </section>
+<!-- Alert Comment end -->

@@ -22,7 +22,7 @@ AppAssetIndex::register($this);
     <title><?= Html::encode($this->title) ?></title>
 
     <?php $this->head() ?>
-    <script src="assetIndex/js_index/modernizr.custom.js"></script>
+<!--    <script src="assetIndex/js_index/modernizr.custom.js"></script>-->
 </head>
 <body>
 <?php $this->beginBody() ?>

@@ -23,9 +23,10 @@ class AppAssetIndex extends AssetBundle
         'assetPiccolo/css/flexslider.css',
         'assetIndex/css_index/animate.css',
         'assetIndex/css_index/style.css',
+
     ];
     public $js = [
-        //'js_index/jquery-1.11.1.min.js',
+        'assetIndex/js_index/modernizr.custom.js',
         'assetIndex/js_index/bootstrap.min.js',
         'assetIndex/js_index/jquery.parallax-1.1.3.js',
         'assetIndex/js_index/imagesloaded.pkgd.js',
@@ -37,8 +38,8 @@ class AppAssetIndex extends AssetBundle
         'assetIndex/js_index/jquery.cbpQTRotator.js',
         'assetIndex/js_index/custom.js',
         'assetIndex/js_index/comment.js',
-        'assetPiccolo/js/jquery.flexslider.js',
-        'assetPiccolo/js/my.js',
+        'assetIndex/js_index/jquery.flexslider.js',
+        'assetIndex/js_index/my.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

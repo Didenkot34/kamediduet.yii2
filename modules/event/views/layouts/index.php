@@ -4,10 +4,6 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AppAssetIndex;
 
 AppAssetIndex::register($this);
@@ -22,7 +18,6 @@ AppAssetIndex::register($this);
     <title><?= Html::encode($this->title['title']) ?></title>
 
     <?php $this->head() ?>
-    <script src="assetIndex/js_index/modernizr.custom.js"></script>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -51,7 +46,6 @@ AppAssetIndex::register($this);
         <h1><?=$this->title['title']?></h1>
         <div class="start"><?=$this->title['id_post']?></div>
     </div>
-
     <a href="#title">
         <div class="scroll-down">
             <span>
@@ -59,19 +53,14 @@ AppAssetIndex::register($this);
             </span>
         </div>
     </a>
-
 </section>
-
 <!-- Home end -->
 
 <!-- Navigation start -->
 
 <header class="header">
-
     <nav class="navbar navbar-custom" role="navigation">
-
         <div class="container">
-
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -81,7 +70,6 @@ AppAssetIndex::register($this);
                 </button>
                 <a class="navbar-brand" href="/">Jules & Verne</a>
             </div>
-
             <div class="collapse navbar-collapse" id="custom-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Главная</a></li>
@@ -91,26 +79,18 @@ AppAssetIndex::register($this);
                     <li><a href="#comment">Оставить отзыв</a></li>
                 </ul>
             </div>
-
         </div><!-- .container -->
-
     </nav>
-
 </header>
-
 <!-- Navigation end -->
-
 
         <?= $content ?>
 
 <!-- Footer start -->
-
 <footer id="footer">
     <div class="container">
         <div class="row">
-
             <div class="col-sm-12">
-
                 <ul class="social-links">
                     <li><a href="index.html#" class="wow fadeInUp"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".1s"><i class="fa fa-twitter"></i></a></li>
@@ -118,20 +98,16 @@ AppAssetIndex::register($this);
                     <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".7s"><i class="fa fa-instagram"></i></a></li>
                     <li><a href="index.html#" class="wow fadeInUp" data-wow-delay="1s"><i class="fa fa-envelope"></i></a></li>
                 </ul>
-
                 <p class="heart">
-                    Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Nottingham
+                    Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Jules & Verne
                 </p>
                 <p class="copyright">
-                    © 2015 John Doe | Images: <a href="https://unsplash.com/">Unsplash</a> & <a href="http://zoomwalls.com/">Zoomwalls</a>
+                    © 2015 Jules & Verne |<a href="/">ПРАЗДНИК КАК ПРИКЛЮЧЕНИЕ</a>
                 </p>
-
             </div>
-
         </div><!-- .row -->
     </div><!-- .container -->
 </footer>
-
 <!-- Footer end -->
 
 <!-- Scroll to top -->
@@ -141,7 +117,6 @@ AppAssetIndex::register($this);
 </div>
 
 <!-- Scroll to top end-->
-
 
 <?php $this->endBody() ?>
 </body>
