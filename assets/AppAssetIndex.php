@@ -20,7 +20,7 @@ class AppAssetIndex extends AssetBundle
     public $css = [
         'assetIndex/font-awesome-4.4.0/css/font-awesome.min.css',
         'assetIndex/css_index/simple-line-icons.css',
-        'assetPiccolo/css/flexslider.css',
+        'assetIndex/css_index/flexslider.css',
         'assetIndex/css_index/animate.css',
         'assetIndex/css_index/style.css',
 

@@ -5,8 +5,6 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
@@ -37,7 +35,6 @@ AppAsset::register($this);
         <h1>Jules & Verne</h1>
         <nav>
             <a href="<?= Url::home() ?>" class="bp-icon bp-icon-prev" data-info="Главная"><span>Главная</span></a>
-            <!--a href="" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a-->
             <a href="<?= Url::toRoute('/event/categories/events') ?>" class="bp-icon bp-icon-about " data-info="Услуги"><span>Услуги</span></a>
             <a href="<?= Url::toRoute('/admin/posts') ?>" class="bp-icon bp-icon-archive "
                data-info="Admin/posts"><span>Admin</span></a>
