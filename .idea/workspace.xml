@@ -2,114 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e4c70cc-f51b-4ea9-b519-84977455f5c5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assetIndex/js_index/jquery.flexslider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assetIndex/js_index/my.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/AppAssetPiccolo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/AppAssetTooltip.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/css/bootstrap-responsive.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/css/custom-styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/css/flexslider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/css/prettyPhoto.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/css/style-ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/apple-touch-icon-114x114.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/apple-touch-icon-72x72.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/apple-touch-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/author-avatar.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/back-top-btn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/bg_direction_nav.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/container-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery-item-hover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery-item-icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/blog-med-img-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/client-img-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/client-img-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/client-img-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/client-img-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/client-img-5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/flickr-img-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/gallery-img-1-3col.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/gallery-img-1-4col-cir.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/gallery-img-1-4col.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/gallery-img-1-6col.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/gallery-img-1-full.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/gallery-img-13-6col.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/gallery-img-14-6col.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/gallery-img-2-thumb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/post-img-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/slider-img-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/slider-img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/thumbnail-270x130.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/gallery/thumbnail-270x300.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/glyphicons-halflings-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/glyphicons-halflings.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/location-map.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/page-bg-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/piccolo-footer-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/piccolo-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/post-item-hover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/prettyPhoto/default/default_thumb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/prettyPhoto/default/loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/prettyPhoto/default/sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/prettyPhoto/default/sprite_next.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/prettyPhoto/default/sprite_prev.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/prettyPhoto/default/sprite_x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/prettyPhoto/default/sprite_y.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/rnd-client-mask.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/slider-caption-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/social-icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/img/user-avatar.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/js/jquery-latest.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/js/jquery.custom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/js/jquery.easing.1.3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/js/jquery.prettyPhoto.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetPiccolo/js/jquery.quicksand.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/demo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/normalize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/tooltip-bloated.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/tooltip-box.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/tooltip-classic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/tooltip-comic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/tooltip-curved.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/tooltip-flip.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/tooltip-line.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/tooltip-round.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/css/tooltip-sharp.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/codropsicons/codropsicons.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/codropsicons/codropsicons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/codropsicons/codropsicons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/codropsicons/codropsicons.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/codropsicons/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/font-awesome-4.2.0/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/Euclid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/Quasar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/map.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/related/DotNavigationStyles-300x162.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/related/NotificationStyles-300x162.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/shape1.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/shape2.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/shape3.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/tooltip1.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/tooltip2.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/tooltip3.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/user1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/user2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/user3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assetTooltip/img/user4.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/assetPiccolo/js/jquery.flexslider.js" afterPath="$PROJECT_DIR$/web/assetIndex/js_index/jquery.flexslider.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/assetPiccolo/js/my.js" afterPath="$PROJECT_DIR$/web/assetIndex/js_index/my.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/AppAsset.php" afterPath="$PROJECT_DIR$/assets/AppAsset.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/AppAssetIndex.php" afterPath="$PROJECT_DIR$/assets/AppAssetIndex.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/AppAssetYii.php" afterPath="$PROJECT_DIR$/assets/AppAssetYii.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/event/views/layouts/index.php" afterPath="$PROJECT_DIR$/modules/event/views/layouts/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/home/views/layouts/index.php" afterPath="$PROJECT_DIR$/modules/home/views/layouts/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/event/views/categories/single-post.php" afterPath="$PROJECT_DIR$/modules/event/views/categories/single-post.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/Module.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/controllers/CategoriesController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/controllers/DefaultController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/models/Categories.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/models/Comments.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/models/Posts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/views/categories/error.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/views/categories/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/views/categories/posts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/views/categories/save-comment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/views/categories/signup.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/views/categories/single-post.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/views/default/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/posts/views/layouts/posts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/tooltip/Module.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/tooltip/controllers/DefaultController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/tooltip/views/default/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/tooltip/views/layouts/home.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/home/views/index/index.php" afterPath="$PROJECT_DIR$/modules/home/views/index/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kamediduet.test.iws" />
@@ -206,11 +117,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppAsset.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppAsset.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/AppAsset.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44906446">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state vertical-scroll-proportion="-9.333333">
+              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/home/views/index/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.03742204">
+              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -271,7 +192,6 @@
         <option value="$PROJECT_DIR$/views/layouts/yii.php" />
         <option value="$PROJECT_DIR$/modules/event/views/categories/events.php" />
         <option value="$PROJECT_DIR$/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/modules/home/views/index/index.php" />
         <option value="$PROJECT_DIR$/modules/home/controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/modules/event/views/categories/posts.php" />
         <option value="$PROJECT_DIR$/modules/admin/models/Posts.php" />
@@ -294,6 +214,7 @@
         <option value="$PROJECT_DIR$/assets/AppAssetIndex.php" />
         <option value="$PROJECT_DIR$/assets/AppAssetYii.php" />
         <option value="$PROJECT_DIR$/assets/AppAsset.php" />
+        <option value="$PROJECT_DIR$/modules/home/views/index/index.php" />
       </list>
     </option>
   </component>
@@ -365,7 +286,73 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,9 +434,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-4" width="1311" height="772" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19858156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19858156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.50278884" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -575,13 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.291666">
           <caret line="37" column="125" selection-start-line="37" selection-start-column="125" selection-end-line="37" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/home/views/index/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="125" selection-start-line="132" selection-start-column="125" selection-end-line="132" selection-end-column="128" />
         </state>
       </provider>
     </entry>
@@ -869,8 +849,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/AppAsset.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44906446">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state vertical-scroll-proportion="-9.333333">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/home/views/index/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03742204">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
           <folding />
         </state>
       </provider>
