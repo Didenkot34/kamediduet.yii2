@@ -2,9 +2,7 @@
  * Created by didenkot34 on 10.11.15.
  */
 $(document).ready(function () {
-    $('#comment-form').submit(function (event) {
-
-        event.preventDefault();
+    $('#comment-form').on('beforeSubmit', function () {
 
         var form_d = $(this).serialize();
 
@@ -21,6 +19,7 @@ $(document).ready(function () {
             },
             'json'
         );
+        return false;
     });
 
 });
