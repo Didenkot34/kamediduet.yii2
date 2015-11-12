@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\bootstrap\Alert;
 use app\assets\AppAssetIndex;
 
 AppAssetIndex::register($this);
@@ -26,25 +27,38 @@ AppAssetIndex::register($this);
 <div id="preloader">
     <div id="status"></div>
 </div>
-<?php $path = '/images/event/category'.$this->title['id_category'].'/post'.$this->title['id_post'].'/background.jpg'?>
+<?php $path = '/images/event/category' . $this->title['id_category'] . '/post' . $this->title['id_post'] . '/background.jpg' ?>
 <!-- Home start -->
 <section id="home" class="pfblock-image screen-height" style="
-	background: url(<?=$path?>);
-	background-color: #222;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	-webkit-background-size: cover;
-	   -moz-background-size: cover;
-		 -o-background-size: cover;
-			background-size: cover;
-	padding: 0;
-">
+    background: url(<?= $path ?>);
+    background-color: #222;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 0;
+    ">
     <div class="home-overlay"></div>
     <div class="intro">
-        <div class="start"><?= $this->context->id.' '.$this->title['id_category'] ?></div>
-        <h1><?=$this->title['title']?></h1>
-        <div class="start"><?=$this->title['id_post']?></div>
+        <div class="start"><?= $this->context->id . ' ' . $this->title['id_category'] ?></div>
+        <h1><?= $this->title['title'] ?></h1>
+        <?php if (Yii::$app->session->hasFlash('savedComment')): ?>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <?= Alert::widget([
+                        'options' => [
+                            'class' => 'alert-dismissable',
+                        ],
+                        'body' => Yii::$app->session->getFlash('savedComment'),
+                    ])
+                    ?>
+                </div>
+            </div>
+        <?php endif ?>
+        <div class="start"><?= $this->title['id_post'] ?></div>
     </div>
     <a href="#title">
         <div class="scroll-down">
@@ -74,17 +88,18 @@ AppAssetIndex::register($this);
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Главная</a></li>
                     <li><a href="/event/categories/events">Услуги</a></li>
-                    <li><a href="#title"><?=$this->title['title']?></a></li>
+                    <li><a href="#title"><?= $this->title['title'] ?></a></li>
                     <li><a href="#portfolio">Фотографии</a></li>
                     <li><a href="#comment">Оставить отзыв</a></li>
                 </ul>
             </div>
-        </div><!-- .container -->
+        </div>
+        <!-- .container -->
     </nav>
 </header>
 <!-- Navigation end -->
 
-        <?= $content ?>
+<?= $content ?>
 
 <!-- Footer start -->
 <footer id="footer">
@@ -92,21 +107,34 @@ AppAssetIndex::register($this);
         <div class="row">
             <div class="col-sm-12">
                 <ul class="social-links">
-                    <li><a href="index.html#" class="wow fadeInUp"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".1s"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-vk"></i></a></li>
-                    <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".7s"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="index.html#" class="wow fadeInUp" data-wow-delay="1s"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="https://www.facebook.com/ura.didenko" target="_blank" class="wow fadeInUp"><i
+                                class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/didenkoT34" target="_blank" class="wow fadeInUp"
+                           data-wow-delay=".1s"><i
+                                class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://vk.com/kamediduet" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i
+                                class="fa fa-vk"></i></a>
+                    </li>
+                    <li><a href="http://instagram.com/ura.didenko" target="_blank" class="wow fadeInUp"
+                           data-wow-delay=".7s"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/profile/view?id=AAIAABXrOukB21utdsHN2q0f9Q6lV9RO4BoF1nc&trk=nav_responsive_tab_profile"
+                           target="_blank" class="wow fadeInUp" data-wow-delay="1s"><i
+                                class="fa fa-linkedin"></i></a></li>
                 </ul>
                 <p class="heart">
                     Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Jules & Verne
                 </p>
+
                 <p class="copyright">
                     © 2015 Jules & Verne |<a href="/">ПРАЗДНИК КАК ПРИКЛЮЧЕНИЕ</a>
                 </p>
             </div>
-        </div><!-- .row -->
-    </div><!-- .container -->
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
 </footer>
 <!-- Footer end -->
 

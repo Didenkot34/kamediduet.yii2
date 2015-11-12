@@ -1,7 +1,6 @@
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use yii\widgets\Pjax;
 use yii\bootstrap\Alert;
 
 /* @var $this yii\web\View */
@@ -75,6 +74,7 @@ $this->title = [
             <div class="col-sm-6 col-sm-offset-3">
                 <?php
                 $form = ActiveForm::begin([
+                    'action' => '/event/categories/save-comment',
                     'id' => 'comment-form',
                     'options' => [
                         'class' => 'form-horizontal'
@@ -109,8 +109,7 @@ $this->title = [
 <section id="alert-comment" class="pfblock hidden">
     <div class="container">
         <div class="row">
-            '
-            <div class="col-sm-6 col-sm-offset-3">'
+            <div class="col-sm-6 col-sm-offset-3">
                 <?= Alert::widget([
                     'options' => [
                         'class' => 'alert-info',
