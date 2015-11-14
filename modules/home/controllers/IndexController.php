@@ -16,7 +16,8 @@ class IndexController extends Controller
             ->orderBy('id_posts')
             ->limit(3)
             ->all();
-        $comments = Comments::find()->all();
+
+        $comments = Comments::getAllComments();
 
         return $this->render('index', [
             'posts' => $posts,

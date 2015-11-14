@@ -189,7 +189,7 @@ use yii\helpers\Html;
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-                <div class="pfblock-header wow fadeInUp">
+                <div class="pfblock-header wow fadeInUp ">
                     <?= Html::tag('h2', 'Отзывы о нашей работе',['class'=>'pfblock-title'])?>
                     <div class="pfblock-line"></div>
                     <div class="pfblock-subtitle">
@@ -201,20 +201,18 @@ use yii\helpers\Html;
         </div>
         <!-- .row -->
         <div class="row">
-
             <div id="cbp-qtrotator" class="cbp-qtrotator">
 <?php foreach($comments as $comment): ?>
                 <div class="cbp-qtcontent">
-                    <?= Html::img('@web/images/event/category1/post' . $comment->id_posts . '/background.jpg', ['class' => 'img-thumbnail']); ?>
+                    <?= Html::img('@web/images/event/category'.$comment['id_categories'].'/post' . $comment['id_posts'] . '/background.jpg', ['class' => 'img-thumbnail','width'=>'210px','height'=>'140px']); ?>
 
                     <blockquote>
-                        <p><?=$comment->comments ?></p>
-                        <footer> <?=$comment->users_name.' '. $comment->users_lasname ?></footer>
+                        <p><?=$comment['comments'] ?></p>
+                        <footer><strong> <?=$comment['users_name'].' '. $comment['users_last_name'] ?></strong></footer>
                     </blockquote>
                 </div>
  <?php endforeach ?>
             </div>
-
         </div>
         <!-- .row -->
     </div>

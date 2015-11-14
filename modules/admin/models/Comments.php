@@ -1,9 +1,8 @@
 <?php
 
-namespace app\models;
+namespace app\modules\admin\models;
 
 use Yii;
-use yii\db\Query;
 
 /**
  * This is the model class for table "comments".
@@ -64,17 +63,5 @@ class Comments extends \yii\db\ActiveRecord
     public function getIdPosts()
     {
         return $this->hasOne(Posts::className(), ['id_posts' => 'id_posts']);
-    }
-
-    public static function getAllComments()
-    {
-        $query = new Query();
-        $query->select(['id_categories','`posts`.`id_posts`','users_name','users_last_name','comments']);
-        $query->from(['comments']);
-       $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
-       //$query->where(['comments.id_posts'=>['`posts`.`id_posts`']]);
-
-        return $query->all();
-
     }
 }
