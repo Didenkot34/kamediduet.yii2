@@ -4,6 +4,7 @@ namespace app\modules\home\controllers;
 
 use yii\web\Controller;
 use app\models\Posts;
+use app\models\Comments;
 
 class IndexController extends Controller
 {
@@ -15,9 +16,11 @@ class IndexController extends Controller
             ->orderBy('id_posts')
             ->limit(3)
             ->all();
+        $comments = Comments::find()->all();
 
         return $this->render('index', [
             'posts' => $posts,
+            'comments'=>$comments
         ]);
     }
 //    public function actionMkdirs(){

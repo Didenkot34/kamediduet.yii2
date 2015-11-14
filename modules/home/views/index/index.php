@@ -97,10 +97,9 @@ use yii\helpers\Html;
             <div class="col-md-4">
                 <div class="grid wow zoomIn">
                     <figure class="effect-bubba">
-                        <img class="img-thumbnail" src="/images/event/category<?=$post->id_categories?>/post<?=$post->id_posts?>/background.jpg" alt="img01"/>
+                        <?= Html::img('@web/images/event/category' . $post->id_categories . '/post' . $post->id_posts . '/background.jpg', ['class' => 'img-thumbnail', 'alt' => $post->title]); ?>
                         <figcaption>
                             <h2><?= Html::a($post->title, ['/event/categories/single-post','id'=>$post->id_posts], ['class' => 'btn btn-outline btn-default']) ?></h2>
-
                             <?= Html::tag('p', $post->short_discription)?>
                         </figcaption>
                     </figure>
@@ -202,25 +201,20 @@ use yii\helpers\Html;
         </div>
         <!-- .row -->
         <div class="row">
+
             <div id="cbp-qtrotator" class="cbp-qtrotator">
+<?php foreach($comments as $comment): ?>
                 <div class="cbp-qtcontent">
-                    <img class="img-thumbnail" src="assetIndex/images_index/client-1.jpg" alt="client-1"/>
+                    <?= Html::img('@web/images/event/category1/post' . $comment->id_posts . '/background.jpg', ['class' => 'img-thumbnail']); ?>
+
                     <blockquote>
-                        <p>Work with John was a pleasure. He understood exactly what I wanted and created an awesome
-                            site for my company.Work with John was a pleasure. He understood exactly what I wanted and
-                            created an awesome site for my company.</p>
-                        <footer>Pino Caruso</footer>
+                        <p><?=$comment->comments ?></p>
+                        <footer> <?=$comment->users_name.' '. $comment->users_lasname ?></footer>
                     </blockquote>
                 </div>
-                <div class="cbp-qtcontent">
-                    <img class="img-thumbnail" src="assetIndex/images_index/client-2.jpg" alt="client-2"/>
-                    <blockquote>
-                        <p>I'm really happy with the results. Get 100% satisfaction is difficult but Alex got it without
-                            problems.</p>
-                        <footer>Jane Doe</footer>
-                    </blockquote>
-                </div>
+ <?php endforeach ?>
             </div>
+
         </div>
         <!-- .row -->
     </div>
