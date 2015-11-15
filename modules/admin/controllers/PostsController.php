@@ -8,6 +8,8 @@ use app\modules\admin\models\PostsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
+
 
 /**
  * PostsController implements the CRUD actions for Posts model.
@@ -15,6 +17,17 @@ use yii\filters\VerbFilter;
 class PostsController extends Controller
 {
   public $layout = 'yii';
+    public function beforeAction($action)
+    {
+        if (parent::beforeAction($action)) {
+            if (!\Yii::$app->user->can($action->id)) {
+                return Yii::$app->response->redirect(Url::to(['/admin/default/login']));
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function behaviors()
     {
         return [
@@ -35,7 +48,6 @@ class PostsController extends Controller
     {
         $searchModel = new PostsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -49,6 +61,7 @@ class PostsController extends Controller
      */
     public function actionView($id)
     {
+
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -62,7 +75,6 @@ class PostsController extends Controller
     public function actionCreate()
     {
         $model = new Posts();
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_posts]);
         } else {
@@ -81,7 +93,6 @@ class PostsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_posts]);
         } else {
