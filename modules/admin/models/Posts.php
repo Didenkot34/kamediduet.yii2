@@ -49,9 +49,9 @@ class Posts extends \yii\db\ActiveRecord
         return [
             'id_posts' => 'Id Posts',
             'id_categories' => 'Id Categories',
-            'title' => 'Title',
-            'discription' => 'Discription',
-            'short_discription' => 'Short Discription',
+            'title' => 'Заголовок(Title)',
+            'discription' => 'Описание (Discription)',
+            'short_discription' => 'Краткое описание (Short Discription)',
             'numbers_img' => 'Номера Фотографий',
         ];
     }
