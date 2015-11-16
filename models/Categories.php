@@ -30,6 +30,7 @@ class Categories extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['title','discription'], 'required','message'=>'Вы не заполнили это поле'],
             [['title'], 'string', 'max' => 50],
             [['discription'], 'string', 'max' => 600],
             [['icon'], 'string', 'max' => 15]

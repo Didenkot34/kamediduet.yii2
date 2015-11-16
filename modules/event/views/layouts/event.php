@@ -6,9 +6,9 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
+use app\assets\AppAssetEvent;
 
-AppAsset::register($this);
+AppAssetEvent::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

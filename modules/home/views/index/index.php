@@ -119,7 +119,7 @@ use yii\helpers\Html;
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
                     <div class="pfblock-header wow fadeInUp">
-                        <h2 class="pfblock-title">My Skills</h2>
+                        <h2 class="pfblock-title">Наша команда</h2>
 
                         <div class="pfblock-line"></div>
                         <div class="pfblock-subtitle">

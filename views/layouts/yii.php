@@ -41,6 +41,7 @@ AppAssetYii::register($this);
             ['label' => 'Contact', 'url' => ['/site/contact']],
             ['label' => 'Posts', 'url' => ['/admin/posts']],
             ['label' => 'Categories', 'url' => ['/admin/categories']],
+            ['label' => 'Comments', 'url' => ['/admin/comments']],
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/site/login']] :
                 [
@@ -63,9 +64,7 @@ AppAssetYii::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-left">&copy; Jules & Verne<?= date('Y') ?></p>
     </div>
 </footer>
 

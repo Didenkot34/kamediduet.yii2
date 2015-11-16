@@ -33,6 +33,7 @@ class Comments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['id_posts','comments','users_name', 'users_last_name','users_email'], 'required','message'=>'Вы не заполнили это поле'],
             [['id_posts'], 'integer'],
             [['comments'], 'string'],
             [['created_at'], 'safe'],

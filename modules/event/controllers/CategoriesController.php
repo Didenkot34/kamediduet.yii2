@@ -12,6 +12,7 @@ use yii\web\Controller;
 
 class CategoriesController extends Controller
 {
+    public $layout = 'event';
 
     public function actionIndex()
     {

@@ -32,9 +32,9 @@ class Posts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_categories'], 'integer'],
+            [['id_categories'], 'integer','message'=>'Данное поле может принимать только целые числа'],
+            [['discription', 'title','short_discription','id_categories'], 'required','message'=>'Вы не заполнили это поле'],
             [['discription'], 'string'],
-            [['short_discription'], 'required'],
             [['title'], 'string', 'max' => 50],
             [['short_discription'], 'string', 'max' => 100],
             [['numbers_img'], 'string']

@@ -13,20 +13,20 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class AppAssetEvent extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'fonts/feather/style.css',
-        'css/demo.css',
-        'css/component.css',
+        'assetEvent/fonts/feather/style.css',
+        'assetEvent/css/demo.css',
+        'assetEvent/css/component.css',
     ];
     public $js = [
-        'js/modernizr.custom.js',
-        'js/classie.js',
-        'js/dynamics.min.js',
-        'js/main.js',
+        'assetEvent/js/modernizr.custom.js',
+        'assetEvent/js/classie.js',
+        'assetEvent/js/dynamics.min.js',
+        'assetEvent/js/main.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

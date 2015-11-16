@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use app\assets\AppAssetIndex;
 
 AppAssetIndex::register($this);
@@ -63,12 +64,14 @@ AppAssetIndex::register($this);
             </div>
             <div class="collapse navbar-collapse" id="custom-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Works</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">ГЛАВНАЯ</a></li>
+                    <li><a href="#services">УСЛУГИ</a></li>
+                    <li><a href="#portfolio">ПРИМЕРЫ РАБОТ</a></li>
+                    <li><a href="#skills">Наша команда</a></li>
+                    <li><a href="#testimonials">ОТЗЫВЫ</a></li>
+                    <?php if(!Yii::$app->user->isGuest): ?>
+                        <li><a href="<?= Url::toRoute('/admin/posts') ?>" >Admin(<?=Yii::$app->user->identity->username?>)</a></li>
+                    <?php endif?>
                 </ul>
             </div>
         </div><!-- .container -->
@@ -84,21 +87,34 @@ AppAssetIndex::register($this);
         <div class="row">
             <div class="col-sm-12">
                 <ul class="social-links">
-                    <li><a href="index.html#" class="wow fadeInUp"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".1s"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".2s"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-pinterest"></i></a></li>
-                    <li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="https://www.facebook.com/ura.didenko" target="_blank" class="wow fadeInUp"><i
+                                class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/didenkoT34" target="_blank" class="wow fadeInUp"
+                           data-wow-delay=".1s"><i
+                                class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://vk.com/kamediduet" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i
+                                class="fa fa-vk"></i></a>
+                    </li>
+                    <li><a href="http://instagram.com/ura.didenko" target="_blank" class="wow fadeInUp"
+                           data-wow-delay=".7s"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/profile/view?id=AAIAABXrOukB21utdsHN2q0f9Q6lV9RO4BoF1nc&trk=nav_responsive_tab_profile"
+                           target="_blank" class="wow fadeInUp" data-wow-delay="1s"><i
+                                class="fa fa-linkedin"></i></a></li>
                 </ul>
                 <p class="heart">
-                    Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Nottingham
+                    Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Jules & Verne
                 </p>
+
                 <p class="copyright">
-                    © 2015 John Doe | Images: <a href="https://unsplash.com/">Unsplash</a> & <a href="http://zoomwalls.com/">Zoomwalls</a>
+                    © 2015 Jules & Verne |<a href="/">ПРАЗДНИК КАК ПРИКЛЮЧЕНИЕ</a>
                 </p>
             </div>
-        </div><!-- .row -->
-    </div><!-- .container -->
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
 </footer>
 <!-- Footer end -->
 
