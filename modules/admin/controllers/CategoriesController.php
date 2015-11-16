@@ -8,6 +8,7 @@ use app\modules\admin\models\CategoriesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 
 /**
  * CategoriesController implements the CRUD actions for Categories model.
@@ -15,6 +16,19 @@ use yii\filters\VerbFilter;
 class CategoriesController extends Controller
 {
     public $layout = 'yii';
+
+    public function beforeAction($action)
+    {
+        if (parent::beforeAction($action)) {
+            if (!\Yii::$app->user->can($action->id)) {
+                return Yii::$app->response->redirect(Url::to(['/admin/default/login']));
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function behaviors()
     {
         return [
@@ -65,8 +79,8 @@ class CategoriesController extends Controller
 
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            if(!is_dir('images/cat'.$model->id_categories)){
-                mkdir ( 'images/cat'.$model->id_categories, 0777,true);
+            if (!is_dir('images/cat' . $model->id_categories)) {
+                mkdir('images/cat' . $model->id_categories, 0777, true);
             }
             return $this->redirect(['view', 'id' => $model->id_categories]);
         } else {

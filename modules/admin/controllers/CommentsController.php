@@ -8,6 +8,7 @@ use app\modules\admin\models\CommentsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 
 /**
  * CommentsController implements the CRUD actions for Comments model.
@@ -15,6 +16,19 @@ use yii\filters\VerbFilter;
 class CommentsController extends Controller
 {
     public $layout = 'yii';
+
+    public function beforeAction($action)
+    {
+        if (parent::beforeAction($action)) {
+            if (!\Yii::$app->user->can($action->id)) {
+                return Yii::$app->response->redirect(Url::to(['/admin/default/login']));
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function behaviors()
     {
         return [

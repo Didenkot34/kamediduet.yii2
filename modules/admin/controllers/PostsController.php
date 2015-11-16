@@ -16,7 +16,8 @@ use yii\helpers\Url;
  */
 class PostsController extends Controller
 {
-  public $layout = 'yii';
+    public $layout = 'yii';
+
     public function beforeAction($action)
     {
         if (parent::beforeAction($action)) {
@@ -28,6 +29,7 @@ class PostsController extends Controller
             return false;
         }
     }
+
     public function behaviors()
     {
         return [

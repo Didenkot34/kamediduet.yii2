@@ -30,16 +30,18 @@ AppAsset::register($this);
     <!-- Blueprint header -->
     <header class="bp-header cf">
         <span>Праздник как приключение &nbsp;<span class="bp-icon bp-icon-about"
-                                                   data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
+                                                   data-content="Закажите себе на праздник ВЕСЕЛЬЕ!"></span></span>
 
         <h1>Jules & Verne</h1>
         <nav>
             <a href="<?= Url::home() ?>" class="bp-icon bp-icon-prev" data-info="Главная"><span>Главная</span></a>
             <a href="<?= Url::toRoute('/event/categories/events') ?>" class="bp-icon bp-icon-about " data-info="Услуги"><span>Услуги</span></a>
+            <?php if(!Yii::$app->user->isGuest): ?>
             <a href="<?= Url::toRoute('/admin/posts') ?>" class="bp-icon bp-icon-archive "
                data-info="Admin/posts"><span>Admin</span></a>
             <a href="<?= Url::toRoute('/admin/categories') ?>" class="bp-icon bp-icon-archive "
                data-info="Admin/categories"><span>Admin</span></a>
+            <?php endif?>
         </nav>
     </header>
 
