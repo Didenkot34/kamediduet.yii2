@@ -43,7 +43,6 @@ AppAssetIndex::register($this);
     ">
     <div class="home-overlay"></div>
     <div class="intro">
-        <div class="start"><?= $this->context->id . ' ' . $this->title['id_category'] ?></div>
         <h1><?= $this->title['title'] ?></h1>
         <?php if (Yii::$app->session->hasFlash('savedComment')): ?>
             <div class="row">
@@ -58,7 +57,6 @@ AppAssetIndex::register($this);
                 </div>
             </div>
         <?php endif ?>
-        <div class="start"><?= $this->title['id_post'] ?></div>
     </div>
     <a href="#title">
         <div class="scroll-down">
@@ -92,6 +90,14 @@ AppAssetIndex::register($this);
                     <li><a href="#portfolio">Фотографии</a></li>
                     <li><a href="#comment">Оставить отзыв</a></li>
                     <li><a href="/event/comments/all-comments">Все отзывы</a></li>
+                    <?php if (!Yii::$app->user->isGuest): ?>
+                        <li><?= Html::a('<i class="fa fa-2x fa-pencil"></i>', ['/admin/posts/view', 'id' => $this->title['id_post']], [
+                                'class' => 'btn btn-success',
+                                'data' => [
+                                    'confirm' => 'Ты действиетльно хочешь поки эту страницу?'
+                                ],
+                            ]) ?></li>
+                    <?php endif ?>
                 </ul>
             </div>
         </div>

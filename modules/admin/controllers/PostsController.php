@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 
 
 /**
@@ -16,7 +18,8 @@ use yii\helpers\Url;
  */
 class PostsController extends Controller
 {
-  public $layout = 'yii';
+    public $layout = 'yii';
+
     public function beforeAction($action)
     {
         if (parent::beforeAction($action)) {
@@ -28,6 +31,7 @@ class PostsController extends Controller
             return false;
         }
     }
+
     public function behaviors()
     {
         return [
@@ -93,11 +97,18 @@ class PostsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $path = 'images/event/category' . $model->id_categories . '/post' . $model->id_posts;
+        $uploadModel = new UploadForm();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
+            $uploadModel->upload($path);
+
             return $this->redirect(['view', 'id' => $model->id_posts]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'uploadModel' => $uploadModel
             ]);
         }
     }

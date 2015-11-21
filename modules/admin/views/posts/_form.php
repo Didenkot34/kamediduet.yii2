@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 
 <div class="posts-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'id_posts')->hiddenInput()->label(false) ?>
 
@@ -24,6 +24,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'numbers_img')->textInput() ?>
 
+
+    <?php if (isset($uploadModel)) {
+        echo $form->field($uploadModel, 'imageFiles[]')->fileInput(['multiple' => true, 'accept' => 'image/*']);
+    }
+    ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

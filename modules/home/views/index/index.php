@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+
 ?>
 <!-- Services start -->
 <section id="services" class="pfblock pfblock-gray">
@@ -7,7 +8,7 @@ use yii\helpers\Html;
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="pfblock-header wow fadeInUp">
-                    <?= Html::tag('h2',Html::a('Наши услуги', ['/event/categories/events'], ['class' => 'pfblock-title fa_color']),['class'=>'iconbox-title'])?>
+                    <?= Html::tag('h2', Html::a('Наши услуги', ['/event/categories/events'], ['class' => 'pfblock-title fa_color']), ['class' => 'iconbox-title']) ?>
                     <div class="pfblock-line"></div>
                     <div class="pfblock-subtitle">
                         No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
@@ -23,7 +24,7 @@ use yii\helpers\Html;
                         <span class="fa_color fa fa-venus-mars fa-3x"></span>
                     </div>
                     <div class="iconbox-text">
-                        <?= Html::tag('h3',Html::a('Свадьбы', ['/event/categories/posts','id'=>1], ['class' => 'btn btn-outline btn-info']),['class'=>'iconbox-title'])?>
+                        <?= Html::tag('h3', Html::a('Свадьбы', ['/event/categories/posts', 'id' => 1], ['class' => 'btn btn-outline btn-info']), ['class' => 'iconbox-title']) ?>
                         <div class="iconbox-desc">
                             Good things come to those who wait, but only the things left by those who hustle
                         </div>
@@ -36,7 +37,7 @@ use yii\helpers\Html;
                         <span class="fa_color fa fa-users fa-3x"></span>
                     </div>
                     <div class="iconbox-text">
-                        <?= Html::tag('h3',Html::a('Корпоративы', ['/event/categories/posts','id'=>2], ['class' => 'btn btn-outline btn-info']),['class'=>'iconbox-title'])?>
+                        <?= Html::tag('h3', Html::a('Корпоративы', ['/event/categories/posts', 'id' => 2], ['class' => 'btn btn-outline btn-info']), ['class' => 'iconbox-title']) ?>
 
                         <div class="iconbox-desc">
                             Good things come to those who wait, but only the things left by those who hustle
@@ -50,7 +51,7 @@ use yii\helpers\Html;
                         <span class="fa_color fa fa-birthday-cake fa-3x"></span>
                     </div>
                     <div class="iconbox-text">
-                        <?= Html::tag('h3',Html::a('Дни Рождения', ['/event/categories/posts','id'=>3], ['class' => 'btn btn-outline btn-info']),['class'=>'iconbox-title'])?>
+                        <?= Html::tag('h3', Html::a('Дни Рождения', ['/event/categories/posts', 'id' => 3], ['class' => 'btn btn-outline btn-info']), ['class' => 'iconbox-title']) ?>
                         <div class="iconbox-desc">
                             Good things come to those who wait, but only the things left by those who hustle
                         </div>
@@ -63,7 +64,7 @@ use yii\helpers\Html;
                         <span class="fa_color fa fa-bell-o fa-3x"></span>
                     </div>
                     <div class="iconbox-text">
-                        <?= Html::tag('h3',Html::a('Выпускные', ['/event/categories/posts','id'=>4], ['class' => 'btn btn-outline btn-info']),['class'=>'iconbox-title'])?>
+                        <?= Html::tag('h3', Html::a('Выпускные', ['/event/categories/posts', 'id' => 4], ['class' => 'btn btn-outline btn-info']), ['class' => 'iconbox-title']) ?>
                         <div class="iconbox-desc">
                             Good things come to those who wait, but only the things left by those who hustle
                         </div>
@@ -83,6 +84,7 @@ use yii\helpers\Html;
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="pfblock-header wow fadeInUp">
                     <h2 class="pfblock-title">Последние мероприятия</h2>
+
                     <div class="pfblock-line"></div>
                     <div class="pfblock-subtitle">
                         No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
@@ -93,19 +95,19 @@ use yii\helpers\Html;
         </div>
         <!-- .row -->
         <div class="row ">
-<?php foreach($posts as $post): ?>
-            <div class="col-md-4">
-                <div class="grid wow zoomIn">
-                    <figure class="effect-bubba">
-                        <?= Html::img('@web/images/event/category' . $post->id_categories . '/post' . $post->id_posts . '/background.jpg', ['class' => 'img-thumbnail', 'alt' => $post->title]); ?>
-                        <figcaption>
-                            <h2><?= Html::a($post->title, ['/event/categories/single-post','id'=>$post->id_posts], ['class' => 'btn btn-outline btn-default']) ?></h2>
-                            <?= Html::tag('p', $post->short_discription)?>
-                        </figcaption>
-                    </figure>
+            <?php foreach ($posts as $post): ?>
+                <div class="col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <?= Html::img('@web/images/event/category' . $post->id_categories . '/post' . $post->id_posts . '/background.jpg', ['class' => 'img-thumbnail', 'alt' => $post->title]); ?>
+                            <figcaption>
+                                <h2><?= Html::a($post->title, ['/event/categories/single-post', 'id' => $post->id_posts], ['class' => 'btn btn-outline btn-default']) ?></h2>
+                                <?= Html::tag('p', $post->short_discription) ?>
+                            </figcaption>
+                        </figure>
+                    </div>
                 </div>
-            </div>
-<?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
     </div>
     <!-- .contaier -->
@@ -135,6 +137,7 @@ use yii\helpers\Html;
                               style="width: 140px; height: 140px; line-height: 140px;">
                             <span class="fa fa-heart fa-2x animated pulse"></span>
                         </span>
+
                 <h3 class="text-center">Programming</h3>
             </div>
             <div class="col-sm-6 col-md-3 text-center">
@@ -142,6 +145,7 @@ use yii\helpers\Html;
                               style="width: 140px; height: 140px; line-height: 140px;">
                             <span><i class="fa fa-battery-half fa-"></i></span>
                         </span>
+
                 <h3 class="text-center">Design</h3>
             </div>
             <div class="col-sm-6 col-md-3 text-center">
@@ -149,6 +153,7 @@ use yii\helpers\Html;
                               style="width: 140px; height: 140px; line-height: 140px;">
                             <span class="percent">85</span>
                         </span>
+
                 <h3 class="text-center">Marketing</h3>
             </div>
             <div class="col-sm-6 col-md-3 text-center">
@@ -156,6 +161,7 @@ use yii\helpers\Html;
                               style="width: 140px; height: 140px; line-height: 140px;">
                             <span class="percent">95</span>
                         </span>
+
                 <h3 class="text-center">UI / UX</h3>
             </div>
         </div>
@@ -190,7 +196,7 @@ use yii\helpers\Html;
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="pfblock-header wow fadeInUp ">
-                    <?= Html::tag('h2', 'Отзывы о нашей работе',['class'=>'pfblock-title'])?>
+                    <?= Html::tag('h2', 'Отзывы о нашей работе', ['class' => 'pfblock-title']) ?>
                     <div class="pfblock-line"></div>
                     <div class="pfblock-subtitle">
                         Можно придумать много регалий, но отзывы - расскажут больше...
@@ -203,16 +209,17 @@ use yii\helpers\Html;
         <!-- .row -->
         <div class="row">
             <div id="cbp-qtrotator" class="cbp-qtrotator">
-<?php foreach($comments as $comment): ?>
-                <div class="cbp-qtcontent">
-                    <?= Html::img('@web/images/event/category'.$comment['id_categories'].'/post' . $comment['id_posts'] . '/background.jpg', ['class' => 'img-thumbnail','width'=>'210px','height'=>'140px']); ?>
+                <?php foreach ($comments as $comment): ?>
+                    <div class="cbp-qtcontent">
+                        <?= Html::img('@web/images/event/category' . $comment['id_categories'] . '/post' . $comment['id_posts'] . '/background.jpg', ['class' => 'img-thumbnail', 'width' => '210px', 'height' => '140px']); ?>
 
-                    <blockquote>
-                        <p><?=$comment['comments'] ?></p>
-                        <footer><strong> <?=$comment['users_name'].' '. $comment['users_last_name'] ?></strong></footer>
-                    </blockquote>
-                </div>
- <?php endforeach ?>
+                        <blockquote>
+                            <p><?= $comment['comments'] ?></p>
+                            <footer><strong> <?= $comment['users_name'] . ' ' . $comment['users_last_name'] ?></strong>
+                            </footer>
+                        </blockquote>
+                    </div>
+                <?php endforeach ?>
             </div>
         </div>
         <!-- .row -->

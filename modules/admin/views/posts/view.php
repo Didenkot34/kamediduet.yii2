@@ -23,6 +23,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Посмотреть пост', ['/event/categories/single-post', 'id' => $model->id_posts], [
+            'class' => 'btn btn-success',
+            'data' => [
+                'confirm' => 'Ты действиетльно хочешь покинуть страницу редактирования?'
+            ],
+        ]) ?>
     </p>
 
     <?= DetailView::widget([
