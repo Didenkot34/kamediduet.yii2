@@ -7,7 +7,7 @@ $(document).ready(function () {
         var form_d = $(this).serialize();
 
         $.post(
-            '/event/categories/save-comment',
+            '/event/comments/save-comment',
             form_d,
             function (data) {
 

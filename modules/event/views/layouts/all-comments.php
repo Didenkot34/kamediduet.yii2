@@ -16,7 +16,7 @@ AppAssetIndex::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title['title']) ?></title>
+    <title><?= Html::encode($this->title) ?></title>
 
     <?php $this->head() ?>
 </head>
@@ -27,40 +27,13 @@ AppAssetIndex::register($this);
 <div id="preloader">
     <div id="status"></div>
 </div>
-<?php $path = '/images/event/category' . $this->title['id_category'] . '/post' . $this->title['id_post'] . '/background.jpg' ?>
 <!-- Home start -->
-<section id="home" class="pfblock-image screen-height" style="
-    background: url(<?= $path ?>);
-    background-color: #222;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding: 0;
-    ">
+<section id="home" class="pfblock-image screen-height">
     <div class="home-overlay"></div>
     <div class="intro">
-        <div class="start"><?= $this->context->id . ' ' . $this->title['id_category'] ?></div>
-        <h1><?= $this->title['title'] ?></h1>
-        <?php if (Yii::$app->session->hasFlash('savedComment')): ?>
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <?= Alert::widget([
-                        'options' => [
-                            'class' => 'alert-dismissable',
-                        ],
-                        'body' => Yii::$app->session->getFlash('savedComment'),
-                    ])
-                    ?>
-                </div>
-            </div>
-        <?php endif ?>
-        <div class="start"><?= $this->title['id_post'] ?></div>
+        <h1><?= $this->title?></h1>
     </div>
-    <a href="#title">
+    <a href="#all-comments">
         <div class="scroll-down">
             <span>
                 <i class="fa fa-angle-down fa-2x"></i>
@@ -88,10 +61,6 @@ AppAssetIndex::register($this);
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Главная</a></li>
                     <li><a href="/event/categories/events">Услуги</a></li>
-                    <li><a href="#title"><?= $this->title['title'] ?></a></li>
-                    <li><a href="#portfolio">Фотографии</a></li>
-                    <li><a href="#comment">Оставить отзыв</a></li>
-                    <li><a href="/event/comments/all-comments">Все отзывы</a></li>
                 </ul>
             </div>
         </div>

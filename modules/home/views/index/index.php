@@ -193,9 +193,10 @@ use yii\helpers\Html;
                     <?= Html::tag('h2', 'Отзывы о нашей работе',['class'=>'pfblock-title'])?>
                     <div class="pfblock-line"></div>
                     <div class="pfblock-subtitle">
-                        No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
-                        light, to open people’s eyes, to reveal the marvels around.
+                        Можно придумать много регалий, но отзывы - расскажут больше...
                     </div>
+                    <h4><?= Html::a('Все Отзывы', ['/event/comments/all-comments'], ['class' => 'btn btn-info btn-lgt']) ?></h4>
+
                 </div>
             </div>
         </div>

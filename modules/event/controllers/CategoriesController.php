@@ -7,7 +7,6 @@ use app\models\Categories;
 use app\models\Posts;
 use app\models\Comments;
 use app\models\SaveComment;
-use yii\helpers\Url;
 use yii\web\Controller;
 
 class CategoriesController extends Controller
@@ -53,7 +52,7 @@ class CategoriesController extends Controller
             ]);
         }
         $img = explode(',', $post->numbers_img);
-        if ($img[0] == 0) {
+        if (!$img[0]) {
             $img[0] = 'background';
             $img[1] = 'background';
         }
@@ -95,30 +94,4 @@ class CategoriesController extends Controller
         ]);
 
     }
-
-    public function actionSaveComment()
-    {
-        $comment = new SaveComment();
-        if (Yii::$app->request->isAjax) {
-            if ($comment->load(Yii::$app->request->post()) && $comment->validate()) {
-                if ($comment->saveComment()) {
-                    return json_encode(['name' => $comment->users_name]);
-                } else {
-                    return json_encode(['name' => false]);
-                }
-            }
-        } else {
-            if ($comment->load(Yii::$app->request->post()) && $comment->validate()) {
-                if ($comment->saveComment()) {
-                    Yii::$app->session->setFlash('savedComment', '<strong>' . $comment->users_name . '</strong>, Ваш Комментарий успешно отправлен! Спасибо за отзыв!');
-                    return Yii::$app->response->redirect(Url::to(['/event/categories/single-post', 'id' => $comment->id_posts]));
-                } else {
-                    Yii::$app->session->setFlash('savedComment', '<strong>' . $comment->users_name . '</strong>,К сожалению, Ваш комментарий не был сохранен.
-                     Приносим свои извенения! Попробуйте немного позже.');
-                    return Yii::$app->response->redirect(Url::to(['/event/categories/single-post', 'id' => $comment->id_posts]));
-                }
-            }
-        }
-    }
-
 }
