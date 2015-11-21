@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\Categories;
 use Yii;
 use app\modules\admin\models\Posts;
 use app\modules\admin\models\PostsSearch;
@@ -83,7 +84,7 @@ class PostsController extends Controller
             return $this->redirect(['view', 'id' => $model->id_posts]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                'model' => $model
             ]);
         }
     }

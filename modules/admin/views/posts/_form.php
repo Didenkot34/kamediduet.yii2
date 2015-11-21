@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\Categories;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Posts */
@@ -14,7 +15,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_posts')->hiddenInput()->label(false) ?>
 
-    <?= $form->field($model, 'id_categories')->textInput() ?>
+    <?= $form->field($model, 'id_categories')->dropdownList(
+        Categories::find()->select(['title', 'id_categories'])->indexBy('id_categories')->column()
+    ); ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
