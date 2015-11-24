@@ -23,7 +23,7 @@ static $j=1;
 					<div class="zoomer flex-center">
                                             <?= Html::img('@web/images/imac.png',['class' => 'zoomer__image','alt'=>'iMac']); ?>
 						<div class="preview">
-                                                    <?= Html::img('@web/images/event/category'.$post->id_categories.'/post'.$post->id_posts.'/background-preview.jpg',['alt'=>'iMac app preview']); ?>
+                                                    <?= Html::img('@web/images/event/category'.$post->id_categories.'/post'.$post->id_posts.'/background.jpg',['alt'=>'iMac app preview','width' =>'321px', 'height'=>'194px',]); ?>
 							<div class="zoomer__area zoomer__area--size-5"></div>
 						</div>
 					</div>
