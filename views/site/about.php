@@ -13,6 +13,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         This is the About page. You may modify the following file to customize its content:
     </p>
-
+<?php use yii\web\Request;
+$reguest = new Request();
+echo $reguest->userIP;
+?>
     <code><?= __FILE__ ?></code>
 </div>
