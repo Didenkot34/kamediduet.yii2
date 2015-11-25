@@ -5,10 +5,25 @@ namespace app\modules\home\controllers;
 use yii\web\Controller;
 use app\models\Posts;
 use app\models\Comments;
+use app\models\SaveOrder;
+use Yii;
 
 class IndexController extends Controller
 {
     public $layout = 'index';
+
+    public function actions()
+    {
+        return [
+//            'error' => [
+//                'class' => 'yii\web\ErrorAction',
+//            ],
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+        ];
+    }
 
     public function actionIndex()
     {
@@ -19,9 +34,17 @@ class IndexController extends Controller
 
         $comments = Comments::getAllComments();
 
+        $model = new SaveOrder();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        }
+
         return $this->render('index', [
             'posts' => $posts,
-            'comments'=>$comments
+            'comments'=>$comments,
+            'model' => $model
         ]);
     }
 //    public function actionMkdirs(){
@@ -37,4 +60,19 @@ class IndexController extends Controller
 //        endforeach;
 //        return $this->render('mkdirs');
 //    }
+
+    public function actionSaveOrder()
+    {
+        $order = new SaveOrder();
+        if (Yii::$app->request->isAjax) {
+            if ($order->load(Yii::$app->request->post()) && $order->validate()) {
+                if ($order->saveOrder() ) {
+                    return json_encode(['name' => $order->name]);
+                } else {
+                    return json_encode(['name' => false]);
+                }
+            }
+        }
+    }
+
 }

@@ -8,12 +8,15 @@ use yii\base\Model;
 /**
  * ContactForm is the model behind the contact form.
  */
-class ContactForm extends Model
+class SaveOrder extends Model
 {
     public $name;
+    public $categories;
     public $email;
+    public $tel;
+    public $date;
+    public $time_event;
     public $subject;
-    public $body;
     public $verifyCode;
 
     /**
@@ -23,11 +26,11 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email', 'subject','tel','date','time_event','categories'], 'required','message'=>'Поле не может быть пустым'],
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            ['verifyCode', 'captcha','message'=>'Верификационный код введён не верно.'],
         ];
     }
 
@@ -37,7 +40,12 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            'verifyCode' => 'Введите код проверки *',
+            'name' => 'Ваше имя *',
+            'date' => 'Дата Вашего события *',
+            'time_event' => 'Начало мероприятия',
+            'categories' => 'Мероприятие *',
+            'subject' =>'Ваши пожелания по поводу данного мероприятия *'
         ];
     }
 
@@ -60,4 +68,21 @@ class ContactForm extends Model
         }
         return false;
     }
+
+
+        public function saveOrder()
+    {
+        $order = new Orders();
+        $order->categories = $this->categories;
+        $order->date = $this->date;
+        $order->name = $this->name;
+        $order->subject = $this->subject;
+        $order->tel = $this->tel;
+        $order->time_event = $this->time_event;
+        $order->email = $this->email;
+        if($order->save()){
+            return $order;
+        }
+    }
+
 }

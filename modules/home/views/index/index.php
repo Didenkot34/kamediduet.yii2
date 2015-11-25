@@ -1,6 +1,11 @@
 <?php
 use yii\helpers\Html;
-
+use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
+use yii\bootstrap\Alert;
+use \yii\widgets\MaskedInput;
+use \yii\jui\DatePicker;
+use app\models\Categories;
 ?>
 <!-- Services start -->
 <section id="services" class="pfblock pfblock-gray">
@@ -139,15 +144,15 @@ use yii\helpers\Html;
                         <figcaption>
                             <h2>Коваль Павел</h2>
                             <?= Html::tag('p', 'Ведущий <ul class="social-links">
-                                <li><a href="https://www.facebook.com/ura.didenko" target="_blank" class="wow fadeInUp"><i
+                                <li><a href="https://www.facebook.com/pavel.koval.50" target="_blank" class="wow fadeInUp"><i
                                             class="fa fa-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/didenkoT34" target="_blank" class="wow fadeInUp"
+                                <li><a href="https://twitter.com/paolokovalli" target="_blank" class="wow fadeInUp"
                                        data-wow-delay=".1s"><i
                                             class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://vk.com/kamediduet" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i
+                                <li><a href="https://vk.com/pavelkoval" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i
                                             class="fa fa-vk"></i></a>
                                 </li>
-                                <li><a href="http://instagram.com/ura.didenko" target="_blank" class="wow fadeInUp"
+                                <li><a href="http://instagram.com/pavelkoval" target="_blank" class="wow fadeInUp"
                                        data-wow-delay=".7s"><i class="fa fa-instagram"></i></a>
                                 </li>
                                 <li>
@@ -171,7 +176,7 @@ use yii\helpers\Html;
                                 <li><a href="https://twitter.com/didenkoT34" target="_blank" class="wow fadeInUp"
                                        data-wow-delay=".1s"><i
                                             class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://vk.com/kamediduet" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i
+                                <li><a href="https://vk.com/didenkot34" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i
                                             class="fa fa-vk"></i></a>
                                 </li>
                                 <li><a href="http://instagram.com/ura.didenko" target="_blank" class="wow fadeInUp"
@@ -230,7 +235,7 @@ use yii\helpers\Html;
                 </div>
             </div>
             <div class="col-md-12 col-lg-12 calltoaction-btn wow slideInDown" data-wow-delay=".7s">
-                <a href="#contact" class="btn btn-lg">Закажи нас</a>
+                <a id="click-order" href="#order" class="btn btn-lg">Закажи нас</a>
             </div>
         </div>
         <!-- .row -->
@@ -238,6 +243,100 @@ use yii\helpers\Html;
     <!-- .container -->
 </section>
 <!-- CallToAction end -->
+
+<!-- Order start -->
+<section id="order" class="pfblock hidden ">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="pfblock-header">
+                    <h2 class="pfblock-title">Форма Заказа</h2>
+
+                    <div class="pfblock-line"></div>
+                    <div class="pfblock-subtitle">
+                        Заполните пожалуйста все необходимые поля. И мы в ближайшее время созвонимся с Вами.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <?php
+                $form = ActiveForm::begin([
+                    'id' => 'order-form',
+                    'options' => [
+                        'class' => 'form-horizontal'
+                    ]
+                ]);
+                ?>
+                <div class="wow fadeInUp" data-wow-delay=".1s">
+                    <?= $form->field($model, 'name') ?>
+                </div>
+                <?= $form->field($model, 'categories')->dropdownList(
+                    Categories::find()->select(['title', 'id_categories'])->indexBy('title')->column()
+                ); ?>
+                <div class="wow fadeInUp" data-wow-delay=".1s">
+                    <?= $form->field($model, 'date')->widget(DatePicker::classname(), [
+                        'language' => 'ru',
+                        'dateFormat' => 'dd-MM-yyyy',
+                    ]) ?>
+                </div>
+
+                <div class="wow fadeInUp" data-wow-delay=".2s">
+                    <?= $form->field($model, 'time_event')->widget(MaskedInput::className(),[
+                        'mask' => '99:99'
+                    ]) ?>
+                </div>
+
+                <div class="wow fadeInUp" data-wow-delay=".2s">
+                    <?= $form->field($model, 'email')->widget(MaskedInput::className(),[
+                        'clientOptions' => [
+                            'alias' =>  'email'
+                        ],
+                    ]) ?>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay=".2s">
+                    <?= $form->field($model, 'tel')->widget(MaskedInput::className(),[
+                        'mask' => '(999) 999-9999'
+                    ]) ?>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay=".4s">
+                    <?= $form->field($model, 'subject')->textArea(['rows' => 6]) ?>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay=".6s">
+                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                    ]) ?>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay=".6s">
+                <?= Html::submitButton('Отправить заказ', ['class' => 'btn btn-lg btn-block wow fadeInUp', ' data-wow-delay' => '.5s', 'name' => 'order-button']) ?>
+                </div>
+                <?php ActiveForm::end() ?>
+            </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</section>
+<!-- Order end -->
+<!-- Alert Comment start -->
+<section id="alert-order" class="pfblock hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <?= Alert::widget([
+                    'options' => [
+                        'class' => 'alert-info',
+                    ],
+                    'body' => '<strong id="orderUserName"></strong>, Ваш Комментарий успешно отправлен! Спасибо за отзыв!',
+                ])
+                ?>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Alert Comment end -->
 
 <!-- Testimonials start -->
 <section id="testimonials" class="pfblock pfblock-gray">

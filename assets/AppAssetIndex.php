@@ -38,6 +38,7 @@ class AppAssetIndex extends AssetBundle
         'assetIndex/js_index/jquery.cbpQTRotator.js',
         'assetIndex/js_index/custom.js',
         'assetIndex/js_index/comment.js',
+        'assetIndex/js_index/order.js',
         'assetIndex/js_index/jquery.flexslider.js',
         'assetIndex/js_index/my.js',
     ];

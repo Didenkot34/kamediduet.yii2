@@ -144,7 +144,7 @@ h6 {
 .form-control {
 	background: #FFF;
 	border: 1px solid #D8E1E4;
-	font-size: 12px;
+	font-size: 20px;
 	padding: 0 15px;
 }
 
@@ -500,13 +500,13 @@ textarea.form-control {
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
 			border-radius: 3px;
-	font-size: 14px;
-	color: rgba(255, 255, 255, .2);
+	font-size: 25px;
+	color: rgba(255, 255, 255, 0.4);
 }
 
 .social-links a:hover {
-	border: 1px solid rgba(255, 255, 255, .5);
-	color: rgba(255, 255, 255, .8);
+	border: 1px solid rgba(0, 130, 240, .5);
+	color: rgba(0, 130, 240, 0.8);
 }
 
 /* ---------------------------------------------- /*
