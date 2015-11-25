@@ -539,7 +539,7 @@ textarea.form-control {
 .navbar-custom .navbar-nav .dropdown-menu > li > a {
 	font-size: 11px;
 	letter-spacing: 3px;
-	color: #222;
+	color: #7A43B6;
 }
 
 .navbar-custom .nav li.active,
@@ -548,7 +548,7 @@ textarea.form-control {
 .navbar-custom .navbar-nav > li.active a {
 	background: none;
 	outline: 0;
-	color: #E7746F;
+	color: #5BC0DE;
 }
 
 .navbar-custom .navbar-brand {
