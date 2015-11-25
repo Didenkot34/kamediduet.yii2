@@ -72,6 +72,7 @@ class SaveOrder extends Model
 
         public function saveOrder()
     {
+       // $date = new DateTime();
         $order = new Orders();
         $order->categories = $this->categories;
         $order->date = $this->date;
@@ -80,6 +81,7 @@ class SaveOrder extends Model
         $order->tel = $this->tel;
         $order->time_event = $this->time_event;
         $order->email = $this->email;
+        $order->created_at = date('Y-m-d H:i:s');
         if($order->save()){
             return $order;
         }
