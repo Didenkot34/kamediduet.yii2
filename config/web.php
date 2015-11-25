@@ -25,6 +25,7 @@ $config = [
     ],
     'components' => [
         'request' => [
+            'baseUrl'=>'',
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'wSVD7sw4UMnK-rbkqYszfe9S5FtK-FtY',
         ],
@@ -38,9 +39,9 @@ $config = [
             //'enableStrictParsing' => true,
             'rules' => [
                 '/' => 'home/index/index',
-//                'login' => 'site/login',
+                'login' => 'admin/default/login',
                 'categories/<id:\d+>' => 'event/categories/posts',
-//                'single-post/<id:\d+>' => 'event/categories/single-post',
+                'single-post/<id:\d+>' => 'event/categories/single-post',
             ],
         ],
         'cache' => [

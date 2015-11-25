@@ -114,7 +114,7 @@ use yii\helpers\Html;
 </section>
 <!-- Portfolio end -->
 
-<!-- Skills start -->
+<!-- Our Team -->
 <section class="pfblock pfblock-gray" id="skills">
     <div class="container">
         <div class="row skills">
@@ -132,43 +132,92 @@ use yii\helpers\Html;
                 </div>
             </div>
             <!-- .row -->
-            <div class="col-sm-6 col-md-3 text-center">
-						<span data-percent="100" class="chart easyPieChart heart"
-                              style="width: 140px; height: 140px; line-height: 140px;">
-                            <span class="fa fa-heart fa-2x animated pulse"></span>
-                        </span>
-
-                <h3 class="text-center">Programming</h3>
+            <div class="col-md-4">
+                <div class="grid wow zoomInLeft">
+                    <figure class="effect-bubba">
+                        <?= Html::img('@web/images/our_team/Koval.jpg', ['class' => 'img-thumbnail', 'alt' => 'Koval']); ?>
+                        <figcaption>
+                            <h2>Коваль Павел</h2>
+                            <?= Html::tag('p', 'Ведущий <ul class="social-links">
+                                <li><a href="https://www.facebook.com/ura.didenko" target="_blank" class="wow fadeInUp"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/didenkoT34" target="_blank" class="wow fadeInUp"
+                                       data-wow-delay=".1s"><i
+                                            class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://vk.com/kamediduet" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i
+                                            class="fa fa-vk"></i></a>
+                                </li>
+                                <li><a href="http://instagram.com/ura.didenko" target="_blank" class="wow fadeInUp"
+                                       data-wow-delay=".7s"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/profile/view?id=AAIAABXrOukB21utdsHN2q0f9Q6lV9RO4BoF1nc&trk=nav_responsive_tab_profile"
+                                       target="_blank" class="wow fadeInUp" data-wow-delay="1s"><i
+                                            class="fa fa-linkedin"></i></a></li>
+                            </ul>') ?>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
-            <div class="col-sm-6 col-md-3 text-center">
-						<span data-percent="90" class="chart easyPieChart"
-                              style="width: 140px; height: 140px; line-height: 140px;">
-                            <span><i class="fa fa-battery-half fa-"></i></span>
-                        </span>
-
-                <h3 class="text-center">Design</h3>
+            <div class="col-md-4">
+                <div class="grid wow zoomIn">
+                    <figure class="effect-bubba">
+                        <?= Html::img('@web/images/our_team/Didenko.jpg', ['class' => 'img-thumbnail', 'alt' => 'Didenko']); ?>
+                        <figcaption>
+                            <h2>Диденко Юрий</h2>
+                            <?= Html::tag('p', 'Ведущий <ul class="social-links">
+                                <li><a href="https://www.facebook.com/ura.didenko" target="_blank" class="wow fadeInUp"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/didenkoT34" target="_blank" class="wow fadeInUp"
+                                       data-wow-delay=".1s"><i
+                                            class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://vk.com/kamediduet" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i
+                                            class="fa fa-vk"></i></a>
+                                </li>
+                                <li><a href="http://instagram.com/ura.didenko" target="_blank" class="wow fadeInUp"
+                                       data-wow-delay=".7s"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/profile/view?id=AAIAABXrOukB21utdsHN2q0f9Q6lV9RO4BoF1nc&trk=nav_responsive_tab_profile"
+                                       target="_blank" class="wow fadeInUp" data-wow-delay="1s"><i
+                                            class="fa fa-linkedin"></i></a></li>
+                            </ul>') ?>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
-            <div class="col-sm-6 col-md-3 text-center">
-						<span data-percent="85" class="chart easyPieChart"
-                              style="width: 140px; height: 140px; line-height: 140px;">
-                            <span class="percent">85</span>
-                        </span>
-
-                <h3 class="text-center">Marketing</h3>
-            </div>
-            <div class="col-sm-6 col-md-3 text-center">
-						<span data-percent="95" class="chart easyPieChart"
-                              style="width: 140px; height: 140px; line-height: 140px;">
-                            <span class="percent">95</span>
-                        </span>
-
-                <h3 class="text-center">UI / UX</h3>
+            <div class="col-md-4">
+                <div class="grid wow zoomInRight">
+                    <figure class="effect-bubba">
+                        <?= Html::img('@web/images/our_team/Penzev.jpg', ['class' => 'img-thumbnail', 'alt' => 'dj-Penzev']); ?>
+                        <figcaption>
+                            <h2>Пензев Павел</h2>
+                            <?= Html::tag('p', ' dj  <ul class="social-links">
+                                <li><a href="https://www.facebook.com/ura.didenko" target="_blank" class="wow fadeInUp"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/didenkoT34" target="_blank" class="wow fadeInUp"
+                                       data-wow-delay=".1s"><i
+                                            class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://vk.com/kamediduet" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i
+                                            class="fa fa-vk"></i></a>
+                                </li>
+                                <li><a href="http://instagram.com/ura.didenko" target="_blank" class="wow fadeInUp"
+                                       data-wow-delay=".7s"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/profile/view?id=AAIAABXrOukB21utdsHN2q0f9Q6lV9RO4BoF1nc&trk=nav_responsive_tab_profile"
+                                       target="_blank" class="wow fadeInUp" data-wow-delay="1s"><i
+                                            class="fa fa-linkedin"></i></a></li>
+                            </ul>') ?>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
         <!--End row -->
     </div>
 </section>
-<!-- Skills end -->
+<!-- Our Team end -->
 <!-- CallToAction start -->
 <section class="calltoaction">
     <div class="container">
