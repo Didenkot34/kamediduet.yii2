@@ -27,12 +27,22 @@ class IndexController extends Controller
 
     public function actionIndex()
     {
-        $posts = Posts::find()
-            ->orderBy('id_posts')
-            ->limit(3)
-            ->all();
+        $cache = Yii::$app->cache;
+        $posts = $cache->get('posts');
+        if ($posts === false) {
+            $posts = Posts::find()
+                ->orderBy('id_posts')
+                ->limit(3)
+                ->all();
+            $cache->set('posts', $posts, 24*60*60);
+        }
 
-        $comments = Comments::getAllComments();
+        $comments = $cache->get('comments');
+        if ($comments === false) {
+            $comments = Comments::getAllComments();
+            $cache->set('comments', $comments, 24*60*60);
+        }
+
 
         $model = new SaveOrder();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
