@@ -4,6 +4,7 @@ namespace app\modules\home\controllers;
 
 use yii\web\Controller;
 use app\models\Posts;
+use app\models\SearchPost;
 use app\models\Comments;
 use app\models\SaveOrder;
 use Yii;
@@ -43,6 +44,11 @@ class IndexController extends Controller
             $cache->set('comments', $comments, 24*60*60);
         }
 
+        $posts_select = Posts::find()
+            ->select('value', 'title')
+            ->asArray()
+            ->all();
+        $select_model = new SearchPost();
 
         $model = new SaveOrder();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
@@ -54,7 +60,9 @@ class IndexController extends Controller
         return $this->render('index', [
             'posts' => $posts,
             'comments'=>$comments,
-            'model' => $model
+            'model' => $model,
+            'posts_select' => $posts_select,
+            'select_model' => $select_model
         ]);
     }
 //    public function actionMkdirs(){
@@ -80,6 +88,24 @@ class IndexController extends Controller
                     return json_encode(['name' => $order->name]);
                 } else {
                     return json_encode(['name' => false]);
+                }
+            }
+        }
+    }
+
+    public function actionSearchPost()
+    {
+        $search_post = new SearchPost();
+        if (Yii::$app->request->isAjax) {
+            if ($search_post->load(Yii::$app->request->post()) && $search_post->validate()) {
+               $title = $search_post->title;
+                $post = Posts::find()
+                    ->where(['title' => $title])
+                    ->one();
+                if ($post) {
+                    return json_encode(['id' => $post->id_posts]);
+                } else {
+                    return json_encode(['id' => false]);
                 }
             }
         }

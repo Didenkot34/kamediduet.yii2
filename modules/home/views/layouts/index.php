@@ -6,6 +6,8 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\assets\AppAssetIndex;
+use yii\jui\AutoComplete;
+use yii\bootstrap\ActiveForm;
 
 AppAssetIndex::register($this);
 ?>
@@ -16,7 +18,6 @@ AppAssetIndex::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
 
     <?php $this->head() ?>
 </head>
@@ -62,20 +63,42 @@ AppAssetIndex::register($this);
                 </button>
                 <a class="navbar-brand" href="/">Jules & Verne</a>
             </div>
-            <div class="collapse navbar-collapse" id="custom-collapse">
+            <div class="collapse navbar-collapse btn- " id="custom-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#home">ГЛАВНАЯ</a></li>
                     <li><a href="#services">УСЛУГИ</a></li>
                     <li><a href="#portfolio">ПРИМЕРЫ РАБОТ</a></li>
                     <li><a href="#skills">Наша команда</a></li>
                     <li><a href="#testimonials">ОТЗЫВЫ</a></li>
+                    <li><a><i id="li-search" class="fa fa-2x fa-search" ></i></a></li>
                     <?php if(!Yii::$app->user->isGuest): ?>
                         <li><a href="<?= Url::toRoute('/admin/posts') ?>" >Admin(<?=Yii::$app->user->identity->username?>)</a></li>
                     <?php endif?>
                 </ul>
             </div>
+            <div id="form-search">
+            <?php $form = ActiveForm::begin([
+                'id' => 'search-form'
+            ]) ?>
+            <?= $form->field($this->title['select_model'], 'title',[
+                'inputTemplate' => '<div class="input-group">{input}<span class="input-group-btn">'.
+                    '<button class="btn btn-info"><a><i class="fa fa-search" ></i></a></button></span></div>',
+            ])->label(false)->widget(
+                AutoComplete::className(), [
+                'clientOptions' => [
+                    'source' => $this->title['posts_select'],
+                ],
+                'options'=>[
+                    'class'=>'form-control select'
+                ]
+            ]);
+            ?>
+            <?php ActiveForm::end(); ?>
+                </div>
         </div><!-- .container -->
+
     </nav>
+
 </header>
 <!-- Navigation end -->
 

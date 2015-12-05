@@ -12,6 +12,7 @@ use app\models\ContactForm;
 use app\models\Categories;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
+use app\models\Posts;
 
 
 class SiteController extends Controller
@@ -116,11 +117,17 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
-        $categories = Categories::find()
-            ->orderBy('id_categories')
+        $model = new SignupForm();
+        $posts = Posts::find()
+            ->select('value', 'title')
+            ->asArray()
             ->all();
+//            ->orderBy('id_categories')
+//            ->all();
+        //print_r($posts);exit;
         return $this->render('about', [
-            'categories' => $categories,
+            'categories' => $posts,
+            'model' => $model
         ]);
     }
 

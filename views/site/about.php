@@ -1,5 +1,6 @@
 <?php
-
+use yii\jui\AutoComplete;
+use yii\bootstrap\ActiveForm;
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
@@ -18,4 +19,17 @@ $reguest = new Request();
 echo $reguest->userIP;
 ?>
     <code><?= __FILE__ ?></code>
+
+    <?php $form = ActiveForm::begin() ?>
+    <?= $form->field($model, 'username')->widget(
+        AutoComplete::className(), [
+        'clientOptions' => [
+            'source' => $categories,
+        ],
+        'options'=>[
+            'class'=>'form-control'
+        ]
+    ]);
+    ?>
+    <?php ActiveForm::end(); ?>
 </div>

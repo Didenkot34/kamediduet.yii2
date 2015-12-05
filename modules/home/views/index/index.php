@@ -7,6 +7,12 @@ use \yii\widgets\MaskedInput;
 use \yii\jui\DatePicker;
 use app\models\Categories;
 ?>
+<?php
+$this->title = [
+    'posts_select' => $posts_select,
+    'select_model' => $select_model
+];
+?>
 <!-- Services start -->
 <section id="services" class="pfblock pfblock-gray">
     <div class="container">

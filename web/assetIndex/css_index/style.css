@@ -972,3 +972,7 @@ figure.effect-bubba:hover p {
 .fa_color{
 	color: #7a43b6;
 }
+
+.ui-menu-item:first-child {
+	margin-top: 15px;
+}
