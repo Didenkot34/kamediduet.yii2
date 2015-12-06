@@ -81,7 +81,7 @@ AppAssetIndex::register($this);
                 'id' => 'search-form'
             ]) ?>
             <?= $form->field($this->title['select_model'], 'title',[
-                'inputTemplate' => '<div class="input-group">{input}<span class="input-group-btn">'.
+                'inputTemplate' => '<div class="input-group"><span class="input-group-addon"><a id="search-clouse"><i class="fa fa-times-circle-o" ></i></a></span>{input}<span class="input-group-btn">'.
                     '<button class="btn btn-info"><a><i class="fa fa-search" ></i></a></button></span></div>',
             ])->label(false)->widget(
                 AutoComplete::className(), [

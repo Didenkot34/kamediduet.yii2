@@ -98,11 +98,10 @@ class IndexController extends Controller
         $search_post = new SearchPost();
         if (Yii::$app->request->isAjax) {
             if ($search_post->load(Yii::$app->request->post()) && $search_post->validate()) {
-               $title = $search_post->title;
                 $post = Posts::find()
-                    ->where(['title' => $title])
+                    ->where(['title' => $search_post->title])
                     ->one();
-                if ($post) {
+                if (isset($post)) {
                     return json_encode(['id' => $post->id_posts]);
                 } else {
                     return json_encode(['id' => false]);

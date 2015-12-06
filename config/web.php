@@ -15,13 +15,7 @@ $config = [
         ],
         'admin' => [
             'class' => 'app\modules\admin\Module',
-        ],
-        'tooltip' => [
-            'class' => 'app\modules\tooltip\Module',
-        ],
-        'posts' => [
-            'class' => 'app\modules\posts\Module',
-        ],
+        ]
     ],
     'components' => [
         'request' => [
