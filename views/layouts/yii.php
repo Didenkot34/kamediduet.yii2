@@ -38,7 +38,6 @@ AppAssetYii::register($this);
         'items' => [
             ['label' => 'Home', 'url' => ['/']],
             ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
             ['label' => 'Posts', 'url' => ['/admin/posts']],
             ['label' => 'Categories', 'url' => ['/admin/categories']],
             ['label' => 'Comments', 'url' => ['/admin/comments']],

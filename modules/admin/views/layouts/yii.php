@@ -23,11 +23,19 @@ AppAssetYii::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<?php
+$nav = [
+    ['label' => 'Home', 'url' => ['/']],
+            ['label' => 'Posts', 'url' => ['/admin/posts']],
+            ['label' => 'Categories', 'url' => ['/admin/categories']],
+            ['label' => 'Comments', 'url' => ['/admin/comments']],
+            ['label' => 'Orders', 'url' => ['/admin/orders']]
+    ]
+?>
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'Jules & Verne',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -36,18 +44,16 @@ AppAssetYii::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            ['label' => 'Posts', 'url' => ['/admin/posts']],
-            ['label' => 'Categories', 'url' => ['/admin/categories']],
-            ['label' => 'Comments', 'url' => ['/admin/comments']],
-            ['label' => 'Orders', 'url' => ['/admin/orders']],
+            ['label' => 'На главную', 'url' => ['/']],
+            ['label' => 'Posts', 'url' => ['/admin/posts'],'visible' => !Yii::$app->user->isGuest ],
+            ['label' => 'Categories', 'url' => ['/admin/categories'],'visible' => !Yii::$app->user->isGuest ],
+            ['label' => 'Comments', 'url' => ['/admin/comments'],'visible' => !Yii::$app->user->isGuest ],
+            ['label' => 'Orders', 'url' => ['/admin/orders'],'visible' => !Yii::$app->user->isGuest ],
             Yii::$app->user->isGuest ?
-                ['label' => 'Login', 'url' => ['/site/login']] :
+                ['label' => 'Login', 'url' => ['/admin/default/login']] :
                 [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
+                    'url' => ['/admin/default/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ],
         ],

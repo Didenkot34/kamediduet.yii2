@@ -27,10 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_categories',
             'title',
             'discription',
-            'short_discription',
-            'numbers_img',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn','header' => 'Action &nbsp '],
         ],
     ]); ?>
 </div>

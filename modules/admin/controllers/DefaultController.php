@@ -10,6 +10,15 @@ use yii\helpers\Url;
 class DefaultController extends Controller
 {
     public $layout = 'yii';
+
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ]
+        ];
+    }
     public function actionIndex()
     {
         return $this->render('index');
@@ -27,5 +36,12 @@ class DefaultController extends Controller
         return $this->render('login', [
             'model' => $model,
         ]);
+    }
+
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+
+        return $this->goHome();
     }
 }
