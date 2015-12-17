@@ -71,10 +71,26 @@ class Comments extends \yii\db\ActiveRecord
         $query = new Query();
         $query->select(['id_categories','`posts`.`id_posts`','users_name','users_last_name','comments']);
         $query->from(['comments']);
-       $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
-       //$query->where(['comments.id_posts'=>['`posts`.`id_posts`']]);
+        $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
 
         return $query->all();
+
+    }
+
+    public static function getIdCategories()
+    {
+        $id_categories = [];
+        $query = new Query();
+        $query->select(['id_categories', '`posts`.`id_posts`']);
+        $query->from(['comments']);
+        $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
+        $query_categories = $query->all();
+
+        foreach ($query_categories as $query_category) {
+            $id_categories[$query_category['id_posts']] = $query_category['id_categories'];
+        }
+
+        return $id_categories;
 
     }
 }

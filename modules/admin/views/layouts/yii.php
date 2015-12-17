@@ -23,15 +23,6 @@ AppAssetYii::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<?php
-$nav = [
-    ['label' => 'Home', 'url' => ['/']],
-            ['label' => 'Posts', 'url' => ['/admin/posts']],
-            ['label' => 'Categories', 'url' => ['/admin/categories']],
-            ['label' => 'Comments', 'url' => ['/admin/comments']],
-            ['label' => 'Orders', 'url' => ['/admin/orders']]
-    ]
-?>
 <div class="wrap">
     <?php
     NavBar::begin([
