@@ -80,11 +80,22 @@ class PostsController extends Controller
     public function actionCreate()
     {
         $model = new Posts();
+        $uploadModel = new UploadForm();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $path = 'images/event/category' . $model->id_categories . '/post' . $model->id_posts;
+            if (!is_dir('images/event/category' . $model->id_categories . '/post' . $model->id_posts)) {
+                mkdir('images/event/category' . $model->id_categories . '/post' . $model->id_posts, 0777, true);
+            }
+
+            $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
+            $uploadModel->upload($path);
+
             return $this->redirect(['view', 'id' => $model->id_posts]);
         } else {
             return $this->render('create', [
-                'model' => $model
+                'model' => $model,
+                'uploadModel' => $uploadModel
             ]);
         }
     }
