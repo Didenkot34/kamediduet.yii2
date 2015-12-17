@@ -1,5 +1,8 @@
 <?php
 use yii\helpers\Html;
+use yii\widgets\LinkPager;
+use yii\widgets\Pjax;
+
 $this->title = 'Отзывы';
 ?>
 <!-- Comments start -->
@@ -11,34 +14,40 @@ $this->title = 'Отзывы';
                     <?= Html::tag('h2', 'Отзывы о нашей работе', ['class' => 'pfblock-title']) ?>
                     <div class="pfblock-line"></div>
                     <div class="pfblock-subtitle">
-                        No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
-                        light, to open people’s eyes, to reveal the marvels around.
+                        Можно придумать много регалий, но отзывы - расскажут больше...
                     </div>
                 </div>
             </div>
         </div>
         <!-- .row -->
+        <?php Pjax::begin(['timeout' => 1000, 'clientOptions' => ['container' => 'pjax-container']]) ?>
         <div class="row">
-            <?php foreach ($comments as $comment): ?>
+            <?php foreach ($models as $model): ?>
                 <div class="wow fadeInRight ">
                     <div class=" col-sm-4">
-                        <?= Html::img('@web/images/event/category' . $comment['id_categories'] . '/post' . $comment['id_posts'] . '/background.jpg', ['class' => 'img-thumbnail']); ?>
-                        <footer class=" alert-info text-center text-uppercase ">
-                            <strong> <?= $comment['users_name'] . ' ' . $comment['users_last_name'] ?></strong>
-                        </footer>
+                        <?= Html::a(Html::img('@web/images/event/category' . $id_categories[$model->id_posts] . '/post' . $model->id_posts . '/background.jpg', ['class' => 'img-thumbnail']), ['/event/categories/single-post', 'id' => $model->id_posts], ['class' => 'btn btn-outline btn-default']) ?>
+
                     </div>
                 </div>
                 <div class="wow fadeInLeft ">
                     <div class="cbp-qtcontent col-sm-8 ">
                         <blockquote>
-                            <p><?= $comment['comments'] ?></p>
+                            <p><?= $model->comments ?></p>
+                            <footer>
+                                <strong> <?= $model->users_name . ' ' . $model->users_last_name ?></strong>
+                            </footer>
                         </blockquote>
 
                     </div>
                 </div>
                 <div class="clearfix" style="margin-bottom: 40px"></div>
             <?php endforeach ?>
+            <?= LinkPager::widget([
+                'pagination' => $pages,
+            ]);
+            ?>
         </div>
+        <?php Pjax::end() ?>
         <!-- .row -->
     </div>
     <!-- .row -->

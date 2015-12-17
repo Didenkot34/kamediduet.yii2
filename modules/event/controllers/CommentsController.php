@@ -12,6 +12,7 @@ use yii\web\Controller;
 use app\models\Comments;
 use yii\helpers\Url;
 use app\models\SaveComment;
+use yii\data\Pagination;
 
 class CommentsController extends Controller
 {
@@ -19,10 +20,16 @@ class CommentsController extends Controller
 
     public function actionAllComments()
     {
-        $comments = Comments::getAllComments();
-
-        return $this->render('all-comments',[
-            'comments' => $comments,
+        $id_categories = Comments::getIdCategories();
+        $query = Comments::find();
+        $pages = new Pagination(['totalCount' => $query->count(),'defaultPageSize' => '1']);
+        $models = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+        return $this->render('all-comments', [
+            'models' => $models,
+            'pages' => $pages,
+            'id_categories' => $id_categories
         ]);
     }
 

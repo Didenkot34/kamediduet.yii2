@@ -22,9 +22,9 @@ $this->title = [
                     <?= Html::tag('h2', Html::a('Наши услуги', ['/event/categories/events'], ['class' => 'pfblock-title fa_color']), ['class' => 'iconbox-title']) ?>
                     <div class="pfblock-line"></div>
                     <div class="pfblock-subtitle">
-                        No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
-                        light, to open people’s eyes, to reveal the marvels around.
+                        Камеди дуэт «Жюль и Верн» поможет сделать любой праздник веселым и запоминающимся.
                     </div>
+                    <h4><?= Html::a('<i class="fa fa-arrow-circle-right"> Все Услуги </i>', ['/event/categories/events'], ['class' => 'btn btn-info btn-lgt']) ?></h4>
                 </div>
             </div>
         </div>
@@ -37,7 +37,6 @@ $this->title = [
                     <div class="iconbox-text">
                         <?= Html::tag('h3', Html::a('Свадьбы', ['/event/categories/posts', 'id' => 1], ['class' => 'btn btn-outline btn-info']), ['class' => 'iconbox-title']) ?>
                         <div class="iconbox-desc">
-                            Good things come to those who wait, but only the things left by those who hustle
                         </div>
                     </div>
                 </div>
@@ -51,7 +50,6 @@ $this->title = [
                         <?= Html::tag('h3', Html::a('Корпоративы', ['/event/categories/posts', 'id' => 2], ['class' => 'btn btn-outline btn-info']), ['class' => 'iconbox-title']) ?>
 
                         <div class="iconbox-desc">
-                            Good things come to those who wait, but only the things left by those who hustle
                         </div>
                     </div>
                 </div>
@@ -64,7 +62,6 @@ $this->title = [
                     <div class="iconbox-text">
                         <?= Html::tag('h3', Html::a('Дни Рождения', ['/event/categories/posts', 'id' => 3], ['class' => 'btn btn-outline btn-info']), ['class' => 'iconbox-title']) ?>
                         <div class="iconbox-desc">
-                            Good things come to those who wait, but only the things left by those who hustle
                         </div>
                     </div>
                 </div>
@@ -77,7 +74,6 @@ $this->title = [
                     <div class="iconbox-text">
                         <?= Html::tag('h3', Html::a('Выпускные', ['/event/categories/posts', 'id' => 4], ['class' => 'btn btn-outline btn-info']), ['class' => 'iconbox-title']) ?>
                         <div class="iconbox-desc">
-                            Good things come to those who wait, but only the things left by those who hustle
                         </div>
                     </div>
                 </div>
@@ -98,8 +94,9 @@ $this->title = [
 
                     <div class="pfblock-line"></div>
                     <div class="pfblock-subtitle">
-                        No one lights a lamp in order to hide it behind the door: the purpose of light is to create more
-                        light, to open people’s eyes, to reveal the marvels around.
+                        Главный наш принцип – чтобы на празднике царили веселье и смех.
+                        Мы пытаемся, чтобы на наших мероприятиях смеялись даже брови на
+                        лицах гостей и шторы на окнах ресторанов.
                     </div>
                 </div>
             </div>
@@ -118,7 +115,7 @@ $this->title = [
                         </figure>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach ?>
         </div>
     </div>
     <!-- .contaier -->
@@ -136,8 +133,7 @@ $this->title = [
 
                         <div class="pfblock-line"></div>
                         <div class="pfblock-subtitle">
-                            No one lights a lamp in order to hide it behind the door: the purpose of light is to create
-                            more light, to open people’s eyes, to reveal the marvels around.
+                            В нашей команде работают только профессионалы своего дела.
                         </div>
                     </div>
                 </div>
@@ -355,7 +351,7 @@ $this->title = [
                     <div class="pfblock-subtitle">
                         Можно придумать много регалий, но отзывы - расскажут больше...
                     </div>
-                    <h4><?= Html::a('Все Отзывы', ['/event/comments/all-comments'], ['class' => 'btn btn-info btn-lgt']) ?></h4>
+                    <h4><?= Html::a('<i class="fa fa-arrow-circle-right"> Все Отзывы</i>', ['/event/comments/all-comments'], ['class' => 'btn btn-info btn-lgt']) ?></h4>
 
                 </div>
             </div>
