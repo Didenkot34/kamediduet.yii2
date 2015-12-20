@@ -21,7 +21,9 @@ class CommentsController extends Controller
     public function actionAllComments()
     {
         $id_categories = Comments::getIdCategories();
-        $query = Comments::find();
+        //$query = Comments::find(['status'=>'1']);
+        $query = Comments::find()
+            ->where(['status' => 1]);
         $pages = new Pagination(['totalCount' => $query->count(),'defaultPageSize' => '1']);
         $models = $query->offset($pages->offset)
             ->limit($pages->limit)
@@ -35,10 +37,12 @@ class CommentsController extends Controller
 
     public function actionSaveComment()
     {
+        $cache = Yii::$app->cache;
         $comment = new SaveComment();
         if (Yii::$app->request->isAjax) {
             if ($comment->load(Yii::$app->request->post()) && $comment->validate()) {
                 if ($comment->saveComment()) {
+                    $cache->set('comments', false);
                     return json_encode(['name' => $comment->users_name]);
                 } else {
                     return json_encode(['name' => false]);

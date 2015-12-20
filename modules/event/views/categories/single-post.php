@@ -40,7 +40,7 @@ $this->title = [
                     <ul class="slides">
                         <?php foreach ($img as $number) : ?>
                             <li>
-                                <?= Html::img('@web/images/event/category' . $post->id_categories . '/post' . $post->id_posts . '/' . $number . '.jpg', ['class' => ' img-responsive', 'alt' => 'photo']); ?>
+                                <?= Html::img('@web/images/event/category' . $post->id_categories . '/post' . $post->id_posts . '/' . $number, ['class' => ' img-responsive', 'alt' => 'photo']); ?>
                             </li>
                         <?php endforeach ?>
                     </ul>

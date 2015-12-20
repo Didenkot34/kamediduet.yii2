@@ -94,9 +94,11 @@ class CommentsController extends Controller
      */
     public function actionUpdate($id)
     {
+        $cache = Yii::$app->cache;
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $cache->set('comments', false);
             return $this->redirect(['view', 'id' => $model->id_comments]);
         } else {
             return $this->render('update', [
