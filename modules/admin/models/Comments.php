@@ -37,6 +37,7 @@ class Comments extends \yii\db\ActiveRecord
             [['id_posts'], 'integer'],
             [['comments'], 'string'],
             [['created_at'], 'safe'],
+            [['status'], 'safe'],
             [['users_name', 'users_last_name'], 'string', 'max' => 50],
             [['users_email'], 'string', 'max' => 255]
         ];

@@ -37,6 +37,7 @@ class Comments extends \yii\db\ActiveRecord
             [['id_posts'], 'integer'],
             [['comments'], 'string'],
             [['created_at'], 'safe'],
+            [['status'], 'safe'],
             [['users_name', 'users_last_name'], 'string', 'max' => 50],
             [['users_email'], 'string', 'max' => 255]
         ];
@@ -55,6 +56,7 @@ class Comments extends \yii\db\ActiveRecord
             'users_email' => 'Users Email',
             'comments' => 'Comments',
             'created_at' => 'Created At',
+            'status' => 'Status'
         ];
     }
 
@@ -72,8 +74,10 @@ class Comments extends \yii\db\ActiveRecord
         $query->select(['id_categories','`posts`.`id_posts`','users_name','users_last_name','comments']);
         $query->from(['comments']);
         $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
-
+        $query->where('`comments`.`status`=1');
+        //print_r($query->all());exit;
         return $query->all();
+
 
     }
 
@@ -84,6 +88,8 @@ class Comments extends \yii\db\ActiveRecord
         $query->select(['id_categories', '`posts`.`id_posts`']);
         $query->from(['comments']);
         $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
+        $query->where('`comments`.`status`=1');
+
         $query_categories = $query->all();
 
         foreach ($query_categories as $query_category) {

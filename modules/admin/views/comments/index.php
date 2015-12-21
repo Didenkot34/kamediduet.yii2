@@ -31,7 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'users_last_name',
             'users_email:email',
             // 'comments:ntext',
-            // 'created_at',
+             'created_at:datetime',
+            'status',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

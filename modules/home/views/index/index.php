@@ -331,7 +331,7 @@ $this->title = [
                     'options' => [
                         'class' => 'alert-info',
                     ],
-                    'body' => '<strong id="orderUserName"></strong>, Ваш Комментарий успешно отправлен! Спасибо за отзыв!',
+                    'body' => '<strong id="orderUserName"></strong>, Ваш Заказ успешно отправлен! Ждите, мы скоро Вам перезвоним;)!',
                 ])
                 ?>
             </div>
