@@ -79,6 +79,7 @@ class PostsController extends Controller
      */
     public function actionCreate()
     {
+        $cache = Yii::$app->cache;
         $model = new Posts();
         $uploadModel = new UploadForm();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -87,6 +88,8 @@ class PostsController extends Controller
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
             $uploadModel->upload($path,$model);
+
+            $cache->set('posts', false);
 
             return $this->redirect(['view', 'id' => $model->id_posts]);
         } else {
@@ -105,6 +108,7 @@ class PostsController extends Controller
      */
     public function actionUpdate($id)
     {
+        $cache = Yii::$app->cache;
         $model = $this->findModel($id);
         $path = 'images/event/category' . $model->id_categories . '/post' . $model->id_posts;
         $uploadModel = new UploadForm();
@@ -112,6 +116,8 @@ class PostsController extends Controller
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
             $uploadModel->upload($path,$model);
+
+            $cache->set('posts', false);
 
             return $this->redirect(['view', 'id' => $model->id_posts]);
         } else {
@@ -130,7 +136,10 @@ class PostsController extends Controller
      */
     public function actionDelete($id)
     {
+        $cache = Yii::$app->cache;
         $this->findModel($id)->delete();
+
+        $cache->set('posts', false);
 
         return $this->redirect(['index']);
     }

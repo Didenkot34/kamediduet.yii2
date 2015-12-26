@@ -115,8 +115,9 @@ class CommentsController extends Controller
      */
     public function actionDelete($id)
     {
+        $cache = Yii::$app->cache;
         $this->findModel($id)->delete();
-
+        $cache->set('comments', false);
         return $this->redirect(['index']);
     }
 
