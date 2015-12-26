@@ -2,6 +2,8 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Alert;
+use yii\helpers\Url;
+
 
 /* @var $this yii\web\View */
 
@@ -22,6 +24,22 @@ $this->title = [
                     <div class="pfblock-subtitle">
                         <?= $post->discription ?>
                     </div>
+                </div>
+                <div class="fb-share-button col-sm-3 col-sm-offset-1" data-href="<?=Url::canonical()?>" data-layout="button_count"> </div>
+
+                <div id="tw_share_button" class="col-sm-4">
+                    <a href="https://twitter.com/intent/tweet?button_hashtag=JulesVerne" class="twitter-hashtag-button" data-lang="ru" data-related="didenkoT34" data-url="<?=Url::canonical()?>">Tweet #JulesVerne</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </div>
+
+                <script type="text/javascript">
+                    document.write(VK.Share.button(false,{
+                        type: 'round',
+                        url:'<?=Url::canonical()?>',
+                        text: 'Поделиться'
+                    }));
+                </script>
+                <div id="vk_share_button" class="col-sm-2" >
                 </div>
             </div>
         </div>

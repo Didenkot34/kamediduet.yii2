@@ -19,6 +19,7 @@ AppAssetIndex::register($this);
     <title><?= Html::encode($this->title['title']) ?></title>
 
     <?php $this->head() ?>
+    <script type="text/javascript" src="http://vk.com/js/api/share.js?93" charset="windows-1251"></script>
 </head>
 <body>
 <?php $this->beginBody() ?>
