@@ -32,8 +32,7 @@ class Categories extends \yii\db\ActiveRecord
         return [
             [['title','discription'], 'required','message'=>'Вы не заполнили это поле'],
             [['title'], 'string', 'max' => 50],
-            [['discription'], 'string', 'max' => 600],
-            [['icon'], 'string', 'max' => 15]
+            [['discription'], 'string', 'max' => 600]
         ];
     }
 
@@ -45,8 +44,7 @@ class Categories extends \yii\db\ActiveRecord
         return [
             'id_categories' => 'Id Categories',
             'title' => 'Title',
-            'discription' => 'Discription',
-            'icon' => 'Icon',
+            'discription' => 'Discription'
         ];
     }
 

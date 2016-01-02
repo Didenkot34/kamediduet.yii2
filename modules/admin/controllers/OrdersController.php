@@ -39,7 +39,6 @@ class OrdersController extends Controller
             $this->view->params['count']['countNewOrders'] = Orders::getCountNewOrders();
             $this->view->params['comments']['model'] = Comments::getAllComments(0);
             $this->view->params['orders']['model'] = Orders::getNewOrders();
-            $this->view->params['comments']['id_categories'] = Comments::getIdCategories(0);
 
             return true;
         } else {

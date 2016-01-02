@@ -4,10 +4,6 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use yii\widgets\Pjax;
 use app\assets\AppAssetAdmin;
 
 AppAssetAdmin::register($this);
@@ -36,67 +32,21 @@ AppAssetAdmin::register($this);
         <a href="" class="logo">Admin <span class="lite"> Panel</span></a>
         <!--logo end-->
 
-        <div class="nav search-row" id="top_menu">
-            <!--  search form start -->
-            <ul class="nav top-menu">
-                <li>
-                    <form class="navbar-form">
-                        <input class="form-control" placeholder="Search" type="text">
-                    </form>
-                </li>
-            </ul>
-            <!--  search form end -->
-        </div>
+<!--        <div class="nav search-row" id="top_menu">-->
+<!--            search form start -->
+<!--            <ul class="nav top-menu">-->
+<!--                <li>-->
+<!--                    <form class="navbar-form">-->
+<!--                        <input class="form-control" placeholder="Search" type="text">-->
+<!--                    </form>-->
+<!--                </li>-->
+<!--            </ul>-->
+        <!--  search form end -->
+<!--        </div>-->
 
         <div class="top-nav notification-row">
             <!-- notificatoin dropdown start-->
             <ul class="nav pull-right top-menu">
-
-                <!-- task notificatoin start -->
-                <li id="task_notificatoin_bar" class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="icon-task-l"></span>
-                                <span class="badge bg-important">5</span>
-                    </a>
-                    <ul class="dropdown-menu extended tasks-bar">
-                        <div class="notify-arrow notify-arrow-blue"></div>
-                        <li>
-                            <p class="blue">You have 5 pending tasks</p>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="task-info">
-                                    <div class="desc">Design PSD </div>
-                                    <div class="percent">90%</div>
-                                </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                        <span class="sr-only">90% Complete (success)</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="task-info">
-                                    <div class="desc">
-                                        Project 1
-                                    </div>
-                                    <div class="percent">30%</div>
-                                </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                        <span class="sr-only">30% Complete (warning)</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="external">
-                            <a href="#">See All Tasks</a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- task notificatoin end -->
 
                 <!-- inbox notificatoin start-->
                 <li id="mail_notificatoin_bar" class="dropdown">
@@ -206,8 +156,6 @@ AppAssetAdmin::register($this);
                         </li>
                         <li>
                             <?= Html::a('<i class="icon_key_alt"></i> Log Out', ['default/logout']) ?>
-                        <li>
-                            <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
                         </li>
                     </ul>
                 </li>
@@ -248,11 +196,10 @@ AppAssetAdmin::register($this);
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="profile.html">Profile</a></li>
+                        <li><a class="" href="#">Profile</a></li>
                         <li><a class="" href="404">404 Error</a></li>
                     </ul>
                 </li>
-
             </ul>
             <!-- sidebar menu end-->
         </div>
