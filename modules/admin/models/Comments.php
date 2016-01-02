@@ -3,6 +3,7 @@
 namespace app\modules\admin\models;
 
 use Yii;
+use yii\db\Query;
 
 /**
  * This is the model class for table "comments".
@@ -65,5 +66,44 @@ class Comments extends \yii\db\ActiveRecord
     public function getIdPosts()
     {
         return $this->hasOne(Posts::className(), ['id_posts' => 'id_posts']);
+    }
+
+    public static function getCountNewComments()
+    {
+        $newComments = self::find()
+            ->where(['status' => 0]);
+        return $newComments->count();
+    }
+
+    public static function getAllComments($status = 1)
+    {
+        $query = new Query();
+        $query->select(['id_categories','`posts`.`id_posts`','users_name','users_last_name','comments','id_comments','created_at']);
+        $query->from(['comments']);
+        $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
+        $query->where('`comments`.`status`= '.$status);
+        //print_r($query->all());exit;
+        return $query->all();
+
+
+    }
+
+    public static function getIdCategories($status = 1)
+    {
+        $id_categories = [];
+        $query = new Query();
+        $query->select(['id_categories', '`posts`.`id_posts`']);
+        $query->from(['comments']);
+        $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
+        $query->where('`comments`.`status`='.$status);
+
+        $query_categories = $query->all();
+
+        foreach ($query_categories as $query_category) {
+            $id_categories[$query_category['id_posts']] = $query_category['id_categories'];
+        }
+//print_r($id_categories);exit;
+        return $id_categories;
+
     }
 }

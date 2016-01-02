@@ -25,6 +25,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'date') ?>
 
+    <?= $form->field($model, 'status') ?>
+
     <?php // echo $form->field($model, 'time_event') ?>
 
     <?php // echo $form->field($model, 'subject') ?>

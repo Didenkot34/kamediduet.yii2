@@ -9,7 +9,7 @@ use yii\helpers\Url;
 
 class DefaultController extends Controller
 {
-    public $layout = 'yii';
+    public $layout = 'error';
 
     public function actions()
     {
@@ -25,6 +25,7 @@ class DefaultController extends Controller
     }
     public function actionLogin()
     {
+        $this->layout = 'login';
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }

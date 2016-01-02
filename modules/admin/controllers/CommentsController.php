@@ -4,6 +4,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use app\modules\admin\models\Comments;
+use app\modules\admin\models\Orders;
 use app\modules\admin\models\CommentsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -15,7 +16,7 @@ use yii\helpers\Url;
  */
 class CommentsController extends Controller
 {
-    public $layout = 'yii';
+    public $layout = 'adminpanel';
 
     public function beforeAction($action)
     {
@@ -23,6 +24,12 @@ class CommentsController extends Controller
             if (!\Yii::$app->user->can($action->id)) {
                 return Yii::$app->response->redirect(Url::to(['/admin/default/login']));
             }
+
+            $this->view->params['count']['countNewComments'] = Comments::getCountNewComments();
+            $this->view->params['count']['countNewOrders'] = Orders::getCountNewOrders();
+            $this->view->params['comments']['model'] = Comments::getAllComments(0);
+            $this->view->params['orders']['model'] = Orders::getNewOrders();
+            $this->view->params['comments']['id_categories'] = Comments::getIdCategories(0);
             return true;
         } else {
             return false;

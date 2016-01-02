@@ -10,13 +10,12 @@ use yii\base\ErrorException;
 
 $this->title = $name;
 ?>
-<div id="site-error"  >
 
-    <h1 class="text-center"><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
-    </div>
-    <h1 id="error"></h1>
+    <p class="text-404">404</p>
+<div class="alert alert-danger">
+    <?= nl2br(Html::encode($message)) ?>
 </div>
+        <a href="/">Вернуться на главную</a></p>
+    <h1 id="error"></h1>
+
 

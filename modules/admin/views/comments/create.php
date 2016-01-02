@@ -6,16 +6,25 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Comments */
 
-$this->title = 'Create Comments';
-$this->params['breadcrumbs'][] = ['label' => 'Comments', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Создать Отзыв';
 ?>
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-user-md"></i><?= Html::encode($this->title) ?></h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="/"><?= Yii::$app->params['siteName'] ?></a></li>
+            <li><i class="icon_table"></i>Tables</li>
+            <li><i class="fa fa-home"></i><?= Html::a('Отзывы', ['comments/']) ?></li>
+            <li><i class="fa fa-user-md"></i><?= Html::encode($this->title) ?></li>
+        </ol>
+    </div>
+</div>
 <div class="comments-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
 </div>
+
+
