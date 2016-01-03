@@ -4,10 +4,8 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\helpers\Url;
+use yii\bootstrap\Alert;
 use app\assets\AppAssetIndex;
-use yii\jui\AutoComplete;
-use yii\bootstrap\ActiveForm;
 
 AppAssetIndex::register($this);
 ?>
@@ -18,8 +16,10 @@ AppAssetIndex::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
 
     <?php $this->head() ?>
+    <script type="text/javascript" src="http://vk.com/js/api/share.js?93" charset="windows-1251"></script>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -28,29 +28,37 @@ AppAssetIndex::register($this);
 <div id="preloader">
     <div id="status"></div>
 </div>
-
 <!-- Home start -->
-
 <section id="home" class="pfblock-image screen-height">
     <div class="home-overlay"></div>
     <div class="intro">
-        <div class="start">KAMEDI DUET</div>
-        <h1>Jules & Verne</h1>
-        <div class="start">праздник как приключение</div>
+        <h1><?= $this->title?></h1>
+        <?php if (Yii::$app->session->hasFlash('savedComment')): ?>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <?= Alert::widget([
+                        'options' => [
+                            'class' => 'alert-dismissable',
+                        ],
+                        'body' => Yii::$app->session->getFlash('savedComment'),
+                    ])
+                    ?>
+                </div>
+            </div>
+        <?php endif ?>
     </div>
-
-    <a href="#services">
+    <a href="#title">
         <div class="scroll-down">
             <span>
                 <i class="fa fa-angle-down fa-2x"></i>
             </span>
         </div>
     </a>
-
 </section>
 <!-- Home end -->
 
 <!-- Navigation start -->
+
 <header class="header">
     <nav class="navbar navbar-custom" role="navigation">
         <div class="container">
@@ -63,47 +71,21 @@ AppAssetIndex::register($this);
                 </button>
                 <a class="navbar-brand" href="/">Jules & Verne</a>
             </div>
-            <div class="collapse navbar-collapse btn- " id="custom-collapse">
+            <div class="collapse navbar-collapse" id="custom-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home">ГЛАВНАЯ</a></li>
-                    <li><a href="#services">УСЛУГИ</a></li>
-                    <li><a href="#video">Видео</a></li>
-                    <li><a href="#portfolio">ПРИМЕРЫ РАБОТ</a></li>
-                    <li><a href="#skills">Наша команда</a></li>
-                    <li><a href="#testimonials">ОТЗЫВЫ</a></li>
-                    <li><a><i id="li-search" class="fa fa-2x fa-search" ></i></a></li>
-                    <?php if(!Yii::$app->user->isGuest): ?>
-                        <li><a href="<?= Url::toRoute('/admin/posts') ?>" >Admin(<?=Yii::$app->user->identity->username?>)</a></li>
-                    <?php endif?>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/event/categories/events">Услуги</a></li>
+                    <li><a href="#title"><?= $this->title ?></a></li>
+                    <li><a href="/event/comments/all-comments">Все отзывы</a></li>
                 </ul>
             </div>
-            <div id="form-search">
-            <?php $form = ActiveForm::begin([
-                'id' => 'search-form'
-            ]) ?>
-            <?= $form->field($this->title['select_model'], 'title',[
-                'inputTemplate' => '<div class="input-group"><span class="input-group-addon"><a id="search-clouse"><i class="fa fa-times-circle-o" ></i></a></span>{input}<span class="input-group-btn">'.
-                    '<button class="btn btn-info"><a><i class="fa fa-search" ></i></a></button></span></div>',
-            ])->label(false)->widget(
-                AutoComplete::className(), [
-                'clientOptions' => [
-                    'source' => $this->title['posts_select'],
-                ],
-                'options'=>[
-                    'class'=>'form-control select'
-                ]
-            ]);
-            ?>
-            <?php ActiveForm::end(); ?>
-                </div>
-        </div><!-- .container -->
-
+        </div>
+        <!-- .container -->
     </nav>
-
 </header>
 <!-- Navigation end -->
 
-        <?= $content ?>
+<?= $content ?>
 
 <!-- Footer start -->
 <footer id="footer">
@@ -143,9 +125,11 @@ AppAssetIndex::register($this);
 <!-- Footer end -->
 
 <!-- Scroll to top -->
+
 <div class="scroll-up">
     <a href="#home"><i class="fa fa-angle-up"></i></a>
 </div>
+
 <!-- Scroll to top end-->
 
 <?php $this->endBody() ?>

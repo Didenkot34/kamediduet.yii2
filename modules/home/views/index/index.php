@@ -84,8 +84,69 @@ $this->title = [
     <!-- .container -->
 </section>
 <!-- Services end -->
+
+<!-- Video start -->
+<section id="video" class="pfblock pfblock-red">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="pfblock-header wow fadeInUp">
+                    <?= Html::tag('h2', Html::a('Наши Видео', ['/event/categories/events'], ['class' => 'pfblock-title fa_color']), ['class' => 'iconbox-title']) ?>
+                    <div class="pfblock-line"></div>
+                    <div class="pfblock-subtitle">
+                        Камеди дуэт «Жюль и Верн» в разных телепроектах, а также на разных мероприятиях. То как с нами весело, можно увидеть на видео.
+                    </div>
+                    <h4><?= Html::a('<i class="fa fa-arrow-circle-right"> Все Видео </i>', ['/event/video'], ['class' => 'btn btn-info btn-lgt']) ?></h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="iconbox wow slideInLeft ">
+                    <div class="iconbox-icon">
+                        <iframe width="340" height="200" src="https://www.youtube.com/embed/_KONbvtyn6o" frameborder="50" allowfullscreen></iframe>
+                    </div>
+                    <div class="iconbox-text">
+                        <?= Html::tag('h3','Выигрываем Кубок Киева', ['class' => 'iconbox-title']) ?>
+                        <div class="iconbox-desc">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="iconbox wow slideInUp">
+                    <div class="iconbox-icon">
+                        <iframe width="340" height="200" src="https://www.youtube.com/embed/ADptd5EakG8" frameborder="50" allowfullscreen></iframe>
+                    </div>
+                    <div class="iconbox-text">
+                        <?= Html::tag('h3', 'Жуль и Верн на Расссмеши Комика', ['class' => 'iconbox-title']) ?>
+                        <div class="iconbox-desc">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="iconbox wow slideInRight">
+                    <div class="iconbox-icon">
+                        <iframe width="340" height="200" src="https://www.youtube.com/embed/lCd5WWHtXU0" frameborder="50" allowfullscreen></iframe>
+                    </div>
+                    <div class="iconbox-text">
+                        <?= Html::tag('h3', 'Жуль и Верн в Бойцовском Клубе', ['class' => 'iconbox-title']) ?>
+                        <div class="iconbox-desc">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</section>
+<!-- Video end -->
+
+
 <!-- Portfolio start -->
-<section id="portfolio" class="pfblock">
+<section id="portfolio" class=" pfblock pfblock-gray">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
@@ -123,7 +184,7 @@ $this->title = [
 <!-- Portfolio end -->
 
 <!-- Our Team -->
-<section class="pfblock pfblock-gray" id="skills">
+<section class="pfblock " id="skills">
     <div class="container">
         <div class="row skills">
             <div class="row">
