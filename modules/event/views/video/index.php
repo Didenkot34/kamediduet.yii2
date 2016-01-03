@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\Tabs;
 use yii\helpers\Url;
- $this->title = 'Видео';
+ $this->title = 'Видео | '. Yii::$app->params['siteName'];
 ?>
 <div id="title" class="event-video-index">
     <section id="video" class="pfblock pfblock-red">

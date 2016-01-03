@@ -7,11 +7,7 @@ use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
-$this->title = [
-    'id_post' => $post->id_posts,
-    'title' => $post->title,
-    'id_category' => $category->id_categories,
-];
+$this->title = $post->title . ' | ' . Yii::$app->params['siteName'];
 ?>
 <!-- Portfolio start -->
 <section id="title" class="pfblock">

@@ -46,6 +46,8 @@ class IndexController extends Controller
             ->asArray()
             ->all();
         $select_model = new SearchPost();
+        $this->view->params['model']['posts_select'] = $posts_select;
+        $this->view->params['model']['select_model'] = $select_model;
 
         $model = new SaveOrder();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {

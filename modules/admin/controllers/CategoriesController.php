@@ -18,7 +18,6 @@ use yii\helpers\Url;
 class CategoriesController extends Controller
 {
     public $layout = 'adminpanel';
-    public $variable = true;
 
     public function beforeAction($action)
     {

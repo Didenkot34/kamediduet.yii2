@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\widgets\LinkPager;
 use yii\widgets\Pjax;
 
-$this->title = 'Отзывы';
+$this->title = 'Отзывы | '. Yii::$app->params['siteName'];
 ?>
 <!-- Comments start -->
 <section id="all-comments" class="pfblock pfblock-gray">

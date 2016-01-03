@@ -18,7 +18,7 @@ AppAssetIndex::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-
+    <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -81,13 +81,13 @@ AppAssetIndex::register($this);
             <?php $form = ActiveForm::begin([
                 'id' => 'search-form'
             ]) ?>
-            <?= $form->field($this->title['select_model'], 'title',[
+            <?= $form->field($this->params['model']['select_model'], 'title',[
                 'inputTemplate' => '<div class="input-group"><span class="input-group-addon"><a id="search-clouse"><i class="fa fa-times-circle-o" ></i></a></span>{input}<span class="input-group-btn">'.
                     '<button class="btn btn-info"><a><i class="fa fa-search" ></i></a></button></span></div>',
             ])->label(false)->widget(
                 AutoComplete::className(), [
                 'clientOptions' => [
-                    'source' => $this->title['posts_select'],
+                    'source' => $this->params['model']['posts_select'],
                 ],
                 'options'=>[
                     'class'=>'form-control select'

@@ -12,8 +12,7 @@ use yii\bootstrap\Collapse ;
 use yii\bootstrap\Tabs ;
 use yii\bootstrap\Alert ;
 
-$this->title = 'Signup';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Signup |  '. Yii::$app->params['siteName'];
 ?>
 <div class="site-signup">
     <h1><?= Html::encode($this->title) ?></h1>

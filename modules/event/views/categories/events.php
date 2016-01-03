@@ -5,7 +5,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Modal;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Жюль и Верн | Услуги';
+$this->title = 'Услуги | '.Yii::$app->params['siteName'];
 ?>
 
 <div class="clearfix"></div>

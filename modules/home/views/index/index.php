@@ -8,10 +8,7 @@ use \yii\jui\DatePicker;
 use app\models\Categories;
 ?>
 <?php
-$this->title = [
-    'posts_select' => $posts_select,
-    'select_model' => $select_model
-];
+$this->title = Yii::$app->params['siteName'] .' - '.' Праздник Как Приключение';
 ?>
 <!-- Services start -->
 <section id="services" class="pfblock pfblock-gray">

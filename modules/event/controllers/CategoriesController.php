@@ -62,6 +62,10 @@ class CategoriesController extends Controller
 
             $categories = Categories::find()->all();
 
+            $this->view->params['single-post']['id_posts'] = $post->id_posts;
+            $this->view->params['single-post']['title'] = $post->title;
+            $this->view->params['single-post']['id_category'] = $post->id_categories;
+
             /**
              * return count posts in current Category
              */
