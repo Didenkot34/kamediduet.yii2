@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\Tabs;
-use app\assets\AppAssetIndex;
+use yii\helpers\Url;
  $this->title = 'Видео';
 ?>
 <div id="title" class="event-video-index">
@@ -10,7 +10,7 @@ use app\assets\AppAssetIndex;
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
                     <div class="pfblock-header wow fadeInUp">
-                        <?= Html::tag('h2', Html::a('Наши Видео', ['/event/categories/events'], ['class' => 'pfblock-title fa_color']), ['class' => 'iconbox-title']) ?>
+                        <?= Html::tag('h2', 'Наши Видео', ['class' => 'iconbox-title']) ?>
                         <div class="pfblock-line"></div>
                         <div class="pfblock-subtitle">
                             Камеди дуэт «Жюль и Верн» в разных телепроектах, а также на разных мероприятиях. То как с нами весело, можно увидеть на видео.
@@ -90,6 +90,30 @@ use app\assets\AppAssetIndex;
                 </div>
             </div>
             <!-- .row -->
+            <table class="table">
+                <tr>
+                    <td>
+                        <div class="fb-share-button " data-href="<?=Url::canonical()?>" data-layout="button_count"> </div>
+                    </td>
+                    <td>
+                        <div id="tw_share_button" class="">
+                            <a href="https://twitter.com/intent/tweet?button_hashtag=JulesVerne" class="twitter-hashtag-button" data-lang="ru" data-related="didenkoT34" data-url="<?=Url::canonical()?>">Tweet #JulesVerne</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </div>
+                    </td>
+                    <td>
+                        <script type="text/javascript">
+                            document.write(VK.Share.button(false,{
+                                type: 'round',
+                                url:'<?=Url::canonical()?>',
+                                text: 'Поделиться'
+                            }));
+                        </script>
+                        <div id="vk_share_button" >
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
         <!-- .container -->
     </section>

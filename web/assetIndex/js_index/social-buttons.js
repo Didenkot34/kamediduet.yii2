@@ -12,7 +12,14 @@ $(document).ready(function () {
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
+
+
+if( window.location.pathname === '/event/video') {
+    $('#vkshare0').css('margin-top', '0px');
+} else {
     $('#vkshare0').css('margin-top', '63px');
+}
+
 
     $('#tw_share_button').css({'margin-top': '4px', 'margin-left': '9px'});
 
