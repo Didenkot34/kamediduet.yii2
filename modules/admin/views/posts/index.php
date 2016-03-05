@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
@@ -34,7 +35,71 @@ $this->title = 'Posts';
             'id_categories',
             'title',
             'discription',
-            ['class' => 'yii\grid\ActionColumn','header' => 'Action &nbsp '],
+            [
+                'label' => 'Картинка',
+                'format' => 'raw',
+                'value' => function ($data) {
+                    return Html::img(Url::toRoute('@web/images/event/category' . $data->id_categories . '/post' . $data->id_posts.'/background.jpg'), [
+                        'alt' => $data->title,
+                        'title' => $data->title,
+                        'class' => 'img-thumbnail',
+                        'style' => 'width:60px;',
+                        'data-toggle' => 'modal',
+                        'data-target' => '#id' . $data->id_posts
+                    ]);
+                },
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => 'Действия',
+                'template' => '{view} {update} {delete} {link}',
+                'buttons' => [
+                    'view' => function ($url, $data) {
+                        return Html::a(
+                            '<span class="glyphicon glyphicon-eye-open"></span>', '#', [
+                                'data-toggle' => 'modal',
+                                'data-target' => '#id' . $data->id_posts
+                            ]
+                        );
+                    },
+                ],
+            ],
         ],
     ]); ?>
+
+<!-- Modal -->
+<?php foreach ($model->find()->all() as $post): ?>
+    <div id="id<?= $post->id_posts ?>" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="left:5%">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center"><?= $model->getNameCategory($post->id_categories)  ?></h4>
+                </div>
+                <div class="modal-body">
+                    <p class=" text-center"><?= $post->title ?></p>
+                    <?=
+                    Html::img(Url::toRoute('@web/images/event/category' . $post->id_categories . '/post' . $post->id_posts.'/background.jpg'), [
+                        'alt' => $post->title,
+                        'title' => $post->title,
+                        'class' => 'img-thumbnail',
+                        'style' => 'width:100%'
+                    ])
+                    ?>
+                    <div class="pop-up-box">
+                        <div class="popup-content">
+                            <?= $post->discription ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<?php endforeach ?>
 

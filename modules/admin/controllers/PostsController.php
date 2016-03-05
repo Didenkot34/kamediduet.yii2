@@ -59,12 +59,12 @@ class PostsController extends Controller
      */
     public function actionIndex()
     {
-
         $searchModel = new PostsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider
+            'dataProvider' => $dataProvider,
+            'model' => new Posts()
         ]);
     }
 
@@ -96,7 +96,7 @@ class PostsController extends Controller
             $path = 'images/event/category' . $model->id_categories . '/post' . $model->id_posts;
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
-            $uploadModel->upload($path,$model);
+            $uploadModel->upload($path, $model);
 
             $cache->set('posts', false);
 
@@ -124,7 +124,7 @@ class PostsController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
-            $uploadModel->upload($path,$model);
+            $uploadModel->upload($path, $model);
 
             $cache->set('posts', false);
 

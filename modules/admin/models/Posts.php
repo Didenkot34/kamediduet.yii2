@@ -71,4 +71,9 @@ class Posts extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Categories::className(), ['id_categories' => 'id_categories']);
     }
+
+    public function getNameCategory($id)
+    {
+     return Categories::findOne(['id_categories' => $id])->title;
+    }
 }
