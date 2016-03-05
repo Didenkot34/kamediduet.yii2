@@ -31,7 +31,6 @@ class UploadForm extends Model
 
             $model->numbers_img .= $img_name;
             $model->numbers_img = trim(preg_replace('/^,/', '', $model->numbers_img));
-            //$model->numbers_img = trim(preg_replace('/,/', ',<br>', $model->numbers_img));
             $model->save();
             if (!is_dir($path)) {
                 mkdir($path, 0777, true);

@@ -14,6 +14,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
+use app\Traits\Path;
 
 
 /**
@@ -21,6 +22,8 @@ use yii\web\UploadedFile;
  */
 class PostsController extends Controller
 {
+    use Path;
+
     public $layout = 'adminpanel';
 
     public function beforeAction($action)
@@ -93,10 +96,8 @@ class PostsController extends Controller
         $uploadModel = new UploadForm();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            $path = 'images/event/category' . $model->id_categories . '/post' . $model->id_posts;
-
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
-            $uploadModel->upload($path, $model);
+            $uploadModel->upload($this->getPostPath($model->id_categories,$model->id_posts), $model);
 
             $cache->set('posts', false);
 
@@ -119,7 +120,7 @@ class PostsController extends Controller
     {
         $cache = Yii::$app->cache;
         $model = $this->findModel($id);
-        $path = 'images/event/category' . $model->id_categories . '/post' . $model->id_posts;
+        $path = $this->getPostPath($model->id_categories,$model->id_posts);
         $uploadModel = new UploadForm();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
@@ -146,8 +147,9 @@ class PostsController extends Controller
     public function actionDelete($id)
     {
         $cache = Yii::$app->cache;
-        $this->findModel($id)->delete();
-
+        $model = $this->findModel($id);
+        $this->removeDirectory($this->getPostPath($model->id_categories,$model->id_posts));
+        $model->delete();
         $cache->set('posts', false);
 
         return $this->redirect(['index']);

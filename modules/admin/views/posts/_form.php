@@ -25,8 +25,6 @@ use app\models\Categories;
 
     <?= $form->field($model, 'short_discription')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'numbers_img')->textInput() ?>
-
 
     <?php if (isset($uploadModel)) {
         echo $form->field($uploadModel, 'imageFiles[]')->fileInput(['multiple' => true, 'accept' => 'image/*']);
