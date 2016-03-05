@@ -7,9 +7,9 @@ if ($reguest->userIP == '127.0.0.1') {
 
     return [
         'class' => 'yii\db\Connection',
-        'dsn' => 'mysql:host=localhost;dbname=kamediduetcom_yii',
+        'dsn' => 'mysql:host=localhost;dbname=kamediduet_yii',
         'username' => 'root',
-        'password' => '1234',
+        'password' => 'root',
         'charset' => 'utf8',
     ];
 } else {
