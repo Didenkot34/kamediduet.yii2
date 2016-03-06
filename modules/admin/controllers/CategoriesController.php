@@ -11,12 +11,17 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
+use app\Traits\Path;
 
 /**
  * CategoriesController implements the CRUD actions for Categories model.
  */
 class CategoriesController extends Controller
 {
+    use Path;
+    public $property = 'categories_img';
     public $layout = 'adminpanel';
 
     public function beforeAction($action)
@@ -57,10 +62,10 @@ class CategoriesController extends Controller
     {
         $searchModel = new CategoriesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'model' => new Categories()
         ]);
     }
 
@@ -71,6 +76,7 @@ class CategoriesController extends Controller
      */
     public function actionView($id)
     {
+
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -84,16 +90,17 @@ class CategoriesController extends Controller
     public function actionCreate()
     {
         $model = new Categories();
+        $uploadModel = new UploadForm();
+        if ($model->load(Yii::$app->request->post()) && $model->save() ) {
 
+            $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
+            $uploadModel->upload($this->getCategoryPath($model->id_categories), $model, $this->property);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            if (!is_dir('images/cat' . $model->id_categories)) {
-                mkdir('images/cat' . $model->id_categories, 0777, true);
-            }
             return $this->redirect(['view', 'id' => $model->id_categories]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'uploadModel' => $uploadModel
             ]);
         }
     }

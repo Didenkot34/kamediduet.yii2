@@ -9,6 +9,11 @@ trait Path
         return 'images/event/category' . $idCategory . '/post' . $idPost;
     }
 
+    public function getCategoryPath($idCategory)
+    {
+        return 'images/cat' . $idCategory ;
+    }
+
     public function removeDirectory($dir)
     {
 

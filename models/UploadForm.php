@@ -3,8 +3,8 @@ namespace app\models;
 
 use app\Traits\Path;
 use yii\base\Model;
+use yii\base\Theme;
 use yii\web\UploadedFile;
-use yii\helpers\ArrayHelper;
 
 class UploadForm extends Model
 {
@@ -21,7 +21,7 @@ class UploadForm extends Model
         ];
     }
 
-    public function upload($path, $model)
+    public function upload($path, $model, $property)
     {
         $img_name = '';
 
@@ -33,8 +33,9 @@ class UploadForm extends Model
                 $file->saveAs($path . '/' . $file->name);
                 $img_name .= ',' . $file->name;
             }
-            $model->numbers_img .= $img_name;
-            $model->numbers_img = trim(preg_replace('/^,/', '', $model->numbers_img));
+
+            $model->$property .= $img_name;
+            $model->$property = trim(preg_replace('/^,/', '', $model->$property));
             $model->save();
             return true;
         } else {

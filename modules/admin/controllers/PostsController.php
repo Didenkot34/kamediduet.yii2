@@ -23,7 +23,7 @@ use app\Traits\Path;
 class PostsController extends Controller
 {
     use Path;
-
+    public $property = 'numbers_img';
     public $layout = 'adminpanel';
 
     public function beforeAction($action)
@@ -97,7 +97,7 @@ class PostsController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
-            $uploadModel->upload($this->getPostPath($model->id_categories,$model->id_posts), $model);
+            $uploadModel->upload($this->getPostPath($model->id_categories,$model->id_posts), $model,$this->property);
 
             $cache->set('posts', false);
 
@@ -126,7 +126,7 @@ class PostsController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
-            $uploadModel->upload($path, $model);
+            $uploadModel->upload($path, $model,$this->property);
             $cache->set('posts', false);
 
             return $this->redirect(['view', 'id' => $model->id_posts]);

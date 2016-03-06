@@ -10,7 +10,7 @@ use Yii;
  * @property integer $id_categories
  * @property string $title
  * @property string $discription
- * @property string $icon
+ * @property string $categories_img
  *
  * @property Posts[] $posts
  */
@@ -30,10 +30,10 @@ class Categories extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title','discription'], 'required','message'=>'Вы не заполнили это поле'],
+            [['categories_img'], 'required'],
             [['title'], 'string', 'max' => 50],
             [['discription'], 'string', 'max' => 600],
-            [['icon'], 'string', 'max' => 15]
+            [['categories_img'], 'string', 'max' => 45]
         ];
     }
 
@@ -46,7 +46,7 @@ class Categories extends \yii\db\ActiveRecord
             'id_categories' => 'Id Categories',
             'title' => 'Title',
             'discription' => 'Discription',
-            'icon' => 'Icon',
+            'categories_img' => 'Categories Img',
         ];
     }
 
@@ -57,5 +57,4 @@ class Categories extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Posts::className(), ['id_categories' => 'id_categories']);
     }
-
 }

@@ -23,6 +23,7 @@ $this->title = 'Создать Категорию';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'uploadModel' => $uploadModel
     ]) ?>
 
 </div>
