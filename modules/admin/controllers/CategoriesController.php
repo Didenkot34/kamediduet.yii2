@@ -28,7 +28,7 @@ class CategoriesController extends Controller
 
             $this->view->params['count']['countNewComments'] = Comments::getCountNewComments();
             $this->view->params['count']['countNewOrders'] = Orders::getCountNewOrders();
-            $this->view->params['comments']['model'] = Comments::getAllComments(0);
+            $this->view->params['comments']['model'] = Comments::getComments(NEW_COMMENTS);
             $this->view->params['orders']['model'] = Orders::getNewOrders();
 
             return true;

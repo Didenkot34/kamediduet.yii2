@@ -22,9 +22,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'comments')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->textInput()->dropDownList([
+        0 =>'Новый комментарий',
+        1 => 'Утвержденный комментарий'
+    ]) ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

@@ -1,12 +1,14 @@
 <?php
 namespace app\models;
 
+use app\Traits\Path;
 use yii\base\Model;
 use yii\web\UploadedFile;
 use yii\helpers\ArrayHelper;
 
 class UploadForm extends Model
 {
+    use Path;
     /**
      * @var UploadedFile[]
      */
@@ -21,23 +23,19 @@ class UploadForm extends Model
 
     public function upload($path, $model)
     {
-        if ($this->validate()) {
-            $data = ArrayHelper::toArray($this->imageFiles);
-            $img_column = array_column($data, 'name');
-            $img_name = '';
-            foreach ($img_column as $name) {
-                $img_name .= ',' . $name;
-            }
+        $img_name = '';
 
-            $model->numbers_img .= $img_name;
-            $model->numbers_img = trim(preg_replace('/^,/', '', $model->numbers_img));
-            $model->save();
+        if ($this->validate()) {
             if (!is_dir($path)) {
                 mkdir($path, 0777, true);
             }
             foreach ($this->imageFiles as $file) {
-                $file->saveAs($path . '/' . $file->baseName . '.' . $file->extension);
+                $file->saveAs($path . '/' . $file->name);
+                $img_name .= ',' . $file->name;
             }
+            $model->numbers_img .= $img_name;
+            $model->numbers_img = trim(preg_replace('/^,/', '', $model->numbers_img));
+            $model->save();
             return true;
         } else {
             return false;

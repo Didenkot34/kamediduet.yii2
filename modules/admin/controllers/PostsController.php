@@ -35,7 +35,7 @@ class PostsController extends Controller
 
             $this->view->params['count']['countNewComments'] = Comments::getCountNewComments();
             $this->view->params['count']['countNewOrders'] = Orders::getCountNewOrders();
-            $this->view->params['comments']['model'] = Comments::getAllComments(0);
+            $this->view->params['comments']['model'] = Comments::getComments(NEW_COMMENTS);
             $this->view->params['orders']['model'] = Orders::getNewOrders();
 
             return true;
@@ -122,15 +122,16 @@ class PostsController extends Controller
         $model = $this->findModel($id);
         $path = $this->getPostPath($model->id_categories,$model->id_posts);
         $uploadModel = new UploadForm();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
             $uploadModel->upload($path, $model);
-
             $cache->set('posts', false);
 
             return $this->redirect(['view', 'id' => $model->id_posts]);
         } else {
+
             return $this->render('update', [
                 'model' => $model,
                 'uploadModel' => $uploadModel
