@@ -7,7 +7,6 @@
  */
 namespace app\models;
 
-use app\models\Comments;
 use yii\base\Model;
 use Yii;
 

@@ -2,12 +2,11 @@
 
 namespace app\modules\admin\controllers;
 
-use app\models\Categories;
 use Yii;
-use app\modules\admin\models\Posts;
-use app\modules\admin\models\Comments;
-use app\modules\admin\models\Orders;
-use app\modules\admin\models\PostsSearch;
+use app\models\Posts;
+use app\models\Comments;
+use app\models\Orders;
+use app\models\PostsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

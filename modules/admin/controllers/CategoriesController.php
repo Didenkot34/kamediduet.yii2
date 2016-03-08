@@ -3,10 +3,10 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\modules\admin\models\Categories;
-use app\modules\admin\models\Comments;
-use app\modules\admin\models\Orders;
-use app\modules\admin\models\CategoriesSearch;
+use app\models\Categories;
+use app\models\Comments;
+use app\models\Orders;
+use app\models\CategoriesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

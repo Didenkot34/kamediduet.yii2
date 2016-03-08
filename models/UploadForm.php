@@ -30,8 +30,8 @@ class UploadForm extends Model
                 mkdir($path, 0777, true);
             }
             if ($property === 'categories_img' && isset($model->$property)) {
-                chmod($path . '/' .  $model->$property,0777);
-                unlink($path . '/' .  $model->$property);
+                chmod($path . '/' . $model->$property, 0777);
+                unlink($path . '/' . $model->$property);
                 $model->$property = '';
                 $model->save();
             }

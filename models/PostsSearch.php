@@ -1,16 +1,15 @@
 <?php
 
-namespace app\modules\admin\models;
+namespace app\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\admin\models\Categories;
 
 /**
- * CategoriesSearch represents the model behind the search form about `app\modules\admin\models\Categories`.
+ * PostsSearch represents the model behind the search form about `app\modules\admin\models\Posts`.
  */
-class CategoriesSearch extends Categories
+class PostsSearch extends Posts
 {
     /**
      * @inheritdoc
@@ -18,8 +17,8 @@ class CategoriesSearch extends Categories
     public function rules()
     {
         return [
-            [['id_categories'], 'integer'],
-            [['title', 'discription','categories_img'], 'safe'],
+            [['id_posts', 'id_categories'], 'integer'],
+            [['title', 'discription', 'short_discription'], 'safe'],
         ];
     }
 
@@ -41,7 +40,7 @@ class CategoriesSearch extends Categories
      */
     public function search($params)
     {
-        $query = Categories::find();
+        $query = Posts::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -56,11 +55,13 @@ class CategoriesSearch extends Categories
         }
 
         $query->andFilterWhere([
+            'id_posts' => $this->id_posts,
             'id_categories' => $this->id_categories,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'discription', $this->discription]);
+            ->andFilterWhere(['like', 'discription', $this->discription])
+            ->andFilterWhere(['like', 'short_discription', $this->short_discription]);
 
         return $dataProvider;
     }

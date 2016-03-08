@@ -33,11 +33,12 @@ class Posts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_categories'], 'integer'],
+            [['id_categories'], 'integer','message'=>'Данное поле может принимать только целые числа'],
+            [['discription', 'title','short_discription','id_categories'], 'required','message'=>'Вы не заполнили это поле'],
             [['discription'], 'string'],
-            [['short_discription'], 'required'],
-            [['title', 'numbers_img'], 'string', 'max' => 50],
-            [['short_discription'], 'string', 'max' => 100]
+            [['title'], 'string', 'max' => 50],
+            [['short_discription'], 'string', 'max' => 100],
+            [['numbers_img'], 'string']
         ];
     }
 
@@ -48,11 +49,11 @@ class Posts extends \yii\db\ActiveRecord
     {
         return [
             'id_posts' => 'Id Posts',
-            'id_categories' => 'Id Categories',
-            'title' => 'Title',
-            'discription' => 'Discription',
-            'short_discription' => 'Short Discription',
-            'numbers_img' => 'Numbers Img',
+            'id_categories' => 'Categories',
+            'title' => 'Заголовок(Title)',
+            'discription' => 'Описание (Discription)',
+            'short_discription' => 'Краткое описание (Short Discription)',
+            'numbers_img' => 'Номера Фотографий',
         ];
     }
 
@@ -88,4 +89,10 @@ class Posts extends \yii\db\ActiveRecord
             ->orderBy('id_posts')
             ->all();
     }
+
+    public function getNameCategory($id)
+    {
+        return Categories::findOne(['id_categories' => $id])->title;
+    }
+
 }

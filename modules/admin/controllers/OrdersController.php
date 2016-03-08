@@ -3,9 +3,9 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\modules\admin\models\Orders;
-use app\modules\admin\models\OrdersSearch;
-use app\modules\admin\models\Comments;
+use app\models\Orders;
+use app\models\OrdersSearch;
+use app\models\Comments;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

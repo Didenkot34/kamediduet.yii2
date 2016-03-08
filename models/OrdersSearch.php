@@ -1,16 +1,15 @@
 <?php
 
-namespace app\modules\admin\models;
+namespace app\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\admin\models\Comments;
 
 /**
- * CommentsSearch represents the model behind the search form about `app\modules\admin\models\Comments`.
+ * OrdersSearch represents the model behind the search form about `app\modules\admin\models\Orders`.
  */
-class CommentsSearch extends Comments
+class OrdersSearch extends Orders
 {
     /**
      * @inheritdoc
@@ -18,8 +17,8 @@ class CommentsSearch extends Comments
     public function rules()
     {
         return [
-            [['id_comments', 'id_posts'], 'integer'],
-            [['users_name', 'users_last_name', 'users_email', 'comments', 'created_at'], 'safe'],
+            [['id_order'], 'integer'],
+            [['categories', 'name', 'tel', 'date', 'time_event', 'subject', 'created_at', 'email'], 'safe'],
         ];
     }
 
@@ -41,7 +40,7 @@ class CommentsSearch extends Comments
      */
     public function search($params)
     {
-        $query = Comments::find();
+        $query = Orders::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -56,15 +55,17 @@ class CommentsSearch extends Comments
         }
 
         $query->andFilterWhere([
-            'id_comments' => $this->id_comments,
-            'id_posts' => $this->id_posts,
+            'id_order' => $this->id_order,
+            'time_event' => $this->time_event,
             'created_at' => $this->created_at,
         ]);
 
-        $query->andFilterWhere(['like', 'users_name', $this->users_name])
-            ->andFilterWhere(['like', 'users_last_name', $this->users_last_name])
-            ->andFilterWhere(['like', 'users_email', $this->users_email])
-            ->andFilterWhere(['like', 'comments', $this->comments]);
+        $query->andFilterWhere(['like', 'categories', $this->categories])
+            ->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'tel', $this->tel])
+            ->andFilterWhere(['like', 'date', $this->date])
+            ->andFilterWhere(['like', 'subject', $this->subject])
+            ->andFilterWhere(['like', 'email', $this->email]);
 
         return $dataProvider;
     }

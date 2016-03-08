@@ -5,6 +5,9 @@ namespace app\models;
 use Yii;
 use yii\db\Query;
 
+define('NEW_COMMENTS', 0);
+define('APPROVED_COMMENTS', 1);
+
 /**
  * This is the model class for table "comments".
  *
@@ -34,6 +37,7 @@ class Comments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['id_posts','comments','users_name', 'users_last_name','users_email'], 'required','message'=>'Вы не заполнили это поле'],
             [['id_posts'], 'integer'],
             [['comments'], 'string'],
             [['created_at'], 'safe'],
@@ -68,26 +72,33 @@ class Comments extends \yii\db\ActiveRecord
         return $this->hasOne(Posts::className(), ['id_posts' => 'id_posts']);
     }
 
-    public static function getAllComments()
+    public static function getCountNewComments()
+    {
+        $newComments = self::find()
+            ->where(['status' => NEW_COMMENTS]);
+        return $newComments->count();
+    }
+
+    public static function getComments($status = APPROVED_COMMENTS)
     {
         $query = new Query();
-        $query->select(['id_categories','`posts`.`id_posts`','users_name','users_last_name','comments']);
+        $query->select(['id_categories','`posts`.`id_posts`','users_name','users_last_name','comments','id_comments','created_at']);
         $query->from(['comments']);
         $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
-        $query->where('`comments`.`status`=1');
+        $query->where('`comments`.`status`= '.$status);
         return $query->all();
 
 
     }
 
-    public static function getIdCategories()
+    public static function getIdCategories($status = APPROVED_COMMENTS)
     {
         $id_categories = [];
         $query = new Query();
         $query->select(['id_categories', '`posts`.`id_posts`']);
         $query->from(['comments']);
         $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
-        $query->where('`comments`.`status`=1');
+        $query->where('`comments`.`status`='.$status);
 
         $query_categories = $query->all();
 

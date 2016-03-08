@@ -33,7 +33,7 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            //[['time_event', 'created_at'], 'safe'],
+            [['time_event', 'created_at','status'], 'safe'],
             [['subject'], 'string'],
             [['categories', 'tel'], 'string', 'max' => 15],
             [['name', 'email'], 'string', 'max' => 55],
@@ -57,5 +57,19 @@ class Orders extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'email' => 'Email',
         ];
+    }
+    public static function getCountNewOrders()
+    {
+        $newOrders = self::find()
+            ->where(['status' => 'new']);
+
+        return $newOrders->count();
+    }
+    public static function getNewOrders()
+    {
+        $newOrders = self::find()
+            ->where(['status' => 'new']);
+
+        return $newOrders->all();
     }
 }
