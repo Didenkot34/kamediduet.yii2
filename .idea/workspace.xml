@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e4c70cc-f51b-4ea9-b519-84977455f5c5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/SearchPost.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/admin/models/Categories.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/admin/models/Comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/admin/models/Orders.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/admin/models/Posts.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/cat21/imac-content-preview.jpg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/modules/admin/models/CategoriesSearch.php" afterPath="$PROJECT_DIR$/models/CategoriesSearch.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/modules/admin/models/CommentsSearch.php" afterPath="$PROJECT_DIR$/models/CommentsSearch.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/modules/admin/models/OrdersSearch.php" afterPath="$PROJECT_DIR$/models/OrdersSearch.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/modules/admin/models/PostsSearch.php" afterPath="$PROJECT_DIR$/models/PostsSearch.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Categories.php" afterPath="$PROJECT_DIR$/models/Categories.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/admin/controllers/CategoriesController.php" afterPath="$PROJECT_DIR$/modules/admin/controllers/CategoriesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Comments.php" afterPath="$PROJECT_DIR$/models/Comments.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/admin/controllers/CommentsController.php" afterPath="$PROJECT_DIR$/modules/admin/controllers/CommentsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Orders.php" afterPath="$PROJECT_DIR$/models/Orders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/admin/controllers/OrdersController.php" afterPath="$PROJECT_DIR$/modules/admin/controllers/OrdersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Posts.php" afterPath="$PROJECT_DIR$/models/Posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/admin/controllers/PostsController.php" afterPath="$PROJECT_DIR$/modules/admin/controllers/PostsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/SaveComment.php" afterPath="$PROJECT_DIR$/models/SaveComment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/SignupForm.php" afterPath="$PROJECT_DIR$/models/SignupForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/cat1/background.jpg" afterPath="$PROJECT_DIR$/web/images/cat1/background.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/cat2/imac-content-preview.jpg" afterPath="$PROJECT_DIR$/web/images/cat2/imac-content-preview.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/cat3/imac-content-preview.jpg" afterPath="$PROJECT_DIR$/web/images/cat3/imac-content-preview.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/cat4/imac-content-preview.jpg" afterPath="$PROJECT_DIR$/web/images/cat4/imac-content-preview.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/cat6/imac-content-preview.jpg" afterPath="$PROJECT_DIR$/web/images/cat6/imac-content-preview.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/cat22/z_sKqGxOjBk.jpg" afterPath="$PROJECT_DIR$/web/images/cat22/z_sKqGxOjBk.jpg" />
     </list>
     <ignored path="kamediduet.test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/admin/controllers/PostsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.479339">
+            <state vertical-scroll-proportion="66.666664">
               <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
               <folding>
                 <element signature="e#49#57#0#PHP" expanded="true" />
@@ -64,6 +49,18 @@
               <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
               <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadForm.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/UploadForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7768595">
+              <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+              <folding>
+                <element signature="e#29#49#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,7 +115,6 @@
         <option value="$PROJECT_DIR$/modules/admin/views/categories/view.php" />
         <option value="$PROJECT_DIR$/modules/admin/views/categories/update.php" />
         <option value="$PROJECT_DIR$/modules/admin/views/categories/index.php" />
-        <option value="$PROJECT_DIR$/models/UploadForm.php" />
         <option value="$PROJECT_DIR$/modules/home/controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/modules/event/views/categories/events.php" />
         <option value="$PROJECT_DIR$/models/CategoriesSearch.php" />
@@ -134,6 +130,7 @@
         <option value="$PROJECT_DIR$/modules/admin/controllers/CategoriesController.php" />
         <option value="$PROJECT_DIR$/modules/admin/controllers/CommentsController.php" />
         <option value="$PROJECT_DIR$/modules/admin/controllers/OrdersController.php" />
+        <option value="$PROJECT_DIR$/models/UploadForm.php" />
       </list>
     </option>
   </component>
@@ -194,6 +191,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="kamediduet.dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kamediduet.dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -731,16 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/UploadForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07438017">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding>
-            <element signature="e#29#49#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -799,10 +818,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/admin/controllers/PostsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.479339">
+        <state vertical-scroll-proportion="66.666664">
           <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding>
             <element signature="e#49#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/UploadForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7768595">
+          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+          <folding>
+            <element signature="e#29#49#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
