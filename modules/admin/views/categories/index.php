@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Картинка',
                 'format' => 'raw',
                 'value' => function ($data) {
-                    return Html::img(Url::toRoute('@web/images/cat' . $data->id_categories . '/korporativ.jpeg'), [
+                    return Html::img(Url::toRoute('@web/images/cat' . $data->id_categories . '/'. $data->categories_img), [
                         'alt' => $data->title,
                         'title' => $data->title,
                         'class' => 'img-thumbnail',
@@ -83,7 +83,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="modal-body">
                     <p class=" text-center"><?= $category->title ?></p>
                     <?=
-                    Html::img(Url::toRoute('@web/images/cat' . $category->id_categories . '/korporativ.jpeg'), [
+                    Html::img(Url::toRoute('@web/images/cat' . $category->id_categories . '/'. $category->categories_img), [
                         'alt' => $category->title,
                         'title' => $category->title,
                         'class' => 'img-thumbnail',

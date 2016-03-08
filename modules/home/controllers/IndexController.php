@@ -64,19 +64,6 @@ class IndexController extends Controller
             'select_model' => $select_model
         ]);
     }
-//    public function actionMkdirs(){
-//        $posts_all = Posts::find()
-//            ->where(['id_categories' => 6])
-//            ->orderBy('id_posts')
-//            ->all();
-//
-//        foreach($posts_all as $post):
-//            if (!is_dir('images/event/category6/post' . $post->id_posts)) {
-//                mkdir('images/event/category6/post' . $post->id_posts,0777, true);
-//            }
-//        endforeach;
-//        return $this->render('mkdirs');
-//    }
 
     public function actionSaveOrder()
     {

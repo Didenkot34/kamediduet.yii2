@@ -17,7 +17,7 @@ class UploadForm extends Model
     public function rules()
     {
         return [
-            [['imageFiles'], 'file', 'skipOnEmpty' => true, 'extensions' => 'jpg,JPG,png', 'maxFiles' => 20],
+            [['imageFiles'], 'file', 'skipOnEmpty' => true, 'extensions' => 'jpg,JPG,png,jpeg', 'maxFiles' => 20],
         ];
     }
 
@@ -28,6 +28,12 @@ class UploadForm extends Model
         if ($this->validate()) {
             if (!is_dir($path)) {
                 mkdir($path, 0777, true);
+            }
+            if ($property === 'categories_img' && isset($model->$property)) {
+                chmod($path . '/' .  $model->$property,0777);
+                unlink($path . '/' .  $model->$property);
+                $model->$property = '';
+                $model->save();
             }
             foreach ($this->imageFiles as $file) {
                 $file->saveAs($path . '/' . $file->name);

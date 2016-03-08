@@ -22,6 +22,7 @@ $this->title = 'Обновить Категорию : ' . ' "' . $model->title.'
 
     <?= $this->render('_form', [
         'model' => $model,
+        'uploadModel' => $uploadModel
     ]) ?>
 
 </div>

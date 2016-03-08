@@ -75,7 +75,6 @@ class Comments extends \yii\db\ActiveRecord
         $query->from(['comments']);
         $query->leftJoin('posts', '`posts`.`id_posts` = `comments`.`id_posts`');
         $query->where('`comments`.`status`=1');
-        //print_r($query->all());exit;
         return $query->all();
 
 

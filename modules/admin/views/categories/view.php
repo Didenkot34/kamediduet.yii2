@@ -38,6 +38,7 @@ $this->title = 'Посмотреть Категорию : ' . ' "' . $model->tit
             'id_categories',
             'title',
             'discription',
+            'categories_img'
         ],
     ]) ?>
 

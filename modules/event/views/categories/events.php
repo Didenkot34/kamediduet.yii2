@@ -22,9 +22,13 @@ $this->title = 'Услуги | '.Yii::$app->params['siteName'];
                 <div class="slide<?= ' ' . $class ?> " data-content="<?= 'content-' . $category->id_categories ?>">
                     <div class="slide__mover">
                         <div class="zoomer flex-center">
-                            <?= Html::img('@web/images/cat' . $category->id_categories . '/imac.png', ['class' => 'zoomer__image', 'alt' => 'iMac']); ?>
+                            <?= Html::img('@web/images/imac.png', ['class' => 'zoomer__image', 'alt' => 'iMac']); ?>
                             <div class="preview">
-                                <?= Html::img('@web/images/cat' . $category->id_categories . '/imac-content-preview.jpg', ['alt' => 'iMac app preview']); ?>
+                                <?= Html::img('@web/images/cat' . $category->id_categories . '/'.$category->categories_img, [
+                                    'alt' => $category->title,
+                                    'class' => 'img-thumbnail',
+                                    'width' => '320px',
+                                ]); ?>
                                 <div class="zoomer__area zoomer__area--size-5"></div>
                             </div>
                         </div>
@@ -47,7 +51,7 @@ $this->title = 'Услуги | '.Yii::$app->params['siteName'];
         <section class="content">
             <?php foreach ($categories as $category): ?>
                 <div class="content__item" id="<?= 'content-' . $category->id_categories ?>">
-                    <?= Html::img('@web/images/cat' . $category->id_categories . '/imac-content.jpg', ['class' => 'content__item-img rounded-right', 'alt' => 'iMac Content']); ?>
+                    <?= Html::img('@web/images/cat' . $category->id_categories . '/'.$category->categories_img, ['class' => 'content__item-img rounded-right', 'alt' => $category->title]); ?>
                     <div class="content__item-inner">
                         <h2><?= $category->title ?></h2>
 

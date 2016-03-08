@@ -91,7 +91,7 @@ class CategoriesController extends Controller
     {
         $model = new Categories();
         $uploadModel = new UploadForm();
-        if ($model->load(Yii::$app->request->post()) && $model->save() ) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
             $uploadModel->upload($this->getCategoryPath($model->id_categories), $model, $this->property);
@@ -114,12 +114,20 @@ class CategoriesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $path = $this->getCategoryPath($model->id_categories);
+        $uploadModel = new UploadForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
+            $uploadModel->upload($path, $model, $this->property);
+
             return $this->redirect(['view', 'id' => $model->id_categories]);
         } else {
+
             return $this->render('update', [
                 'model' => $model,
+                'uploadModel' => $uploadModel
             ]);
         }
     }
@@ -132,7 +140,9 @@ class CategoriesController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $this->removeDirectory($this->getCategoryPath($model->id_categories));
+        $model->delete();
 
         return $this->redirect(['index']);
     }
