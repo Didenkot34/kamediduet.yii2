@@ -29,11 +29,18 @@ class RbacController extends Controller
         $updatePost->description = 'Update post';
         $auth->add($updatePost);
 
+        // добавляем разрешение "updatePost"
+        $photoPost = $auth->createPermission('photo');
+        $photoPost ->description = 'Delete photo';
+        $auth->add($photoPost);
+
+
         // добавляем роль "author" и даём роли разрешение "createPost"
         $author = $auth->createRole('author');
         $auth->add($author);
         $auth->addChild($author, $createPost);
         $auth->addChild($author, $viewPost);
+        $auth->addChild($author, $photoPost);
         // добавляем роль "author" и даём роли разрешение "viewPost"
         $author = $auth->createRole('author');
         $auth->add($author);
@@ -46,6 +53,7 @@ class RbacController extends Controller
         $auth->add($admin);
         $auth->addChild($admin, $indexPost);
         $auth->addChild($admin, $updatePost);
+        $auth->addChild($author, $photoPost);
         $auth->addChild($admin, $author);
 
         // Назначение ролей пользователям. 1 и 2 это IDs возвращаемые IdentityInterface::getId()

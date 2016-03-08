@@ -4,7 +4,7 @@ namespace app\modules\home\controllers;
 
 use yii\web\Controller;
 use app\models\Posts;
-use app\models\SearchPost;
+use app\models\PostsSearch;
 use app\models\Comments;
 use app\models\SaveOrder;
 use Yii;
@@ -45,7 +45,7 @@ class IndexController extends Controller
             ->select('value', 'title')
             ->asArray()
             ->all();
-        $select_model = new SearchPost();
+        $select_model = new PostsSearch();
         $this->view->params['model']['posts_select'] = $posts_select;
         $this->view->params['model']['select_model'] = $select_model;
 
@@ -81,7 +81,7 @@ class IndexController extends Controller
 
     public function actionSearchPost()
     {
-        $search_post = new SearchPost();
+        $search_post = new PostsSearch();
         if (Yii::$app->request->isAjax) {
             if ($search_post->load(Yii::$app->request->post()) && $search_post->validate()) {
                 $post = Posts::find()

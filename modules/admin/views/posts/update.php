@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\admin\models\Posts */
+/* @var $model app\models\Posts */
 
 $this->title = 'Обновление Поста №'.$model->id_posts.': ' . ' ' . $model->title;
 ?>
@@ -22,7 +22,8 @@ $this->title = 'Обновление Поста №'.$model->id_posts.': ' . ' '
 
     <?= $this->render('_form', [
         'model' => $model,
-        'uploadModel' => $uploadModel
+        'uploadModel' => $uploadModel,
+        'arrayAllImg' => $arrayAllImg
     ]) ?>
 
 </div>

@@ -50,7 +50,7 @@ class CategoriesController extends Controller
         if (!($post = Posts::findOne(['id_posts' => $id]))) { // item does not exist
             throw new NotFoundHttpException('Пост с идентфикатором "' . $id . '" отсутствует');
         } else {
-            $img = explode(',', $post->numbers_img);
+            $img = explode(',', $post->posts_img);
             if (!$img[0]) {
                 $img[0] = 'background';
                 $img[1] = 'background';

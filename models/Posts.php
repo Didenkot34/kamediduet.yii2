@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\Traits\Path;
 use Yii;
 
 /**
@@ -12,7 +13,7 @@ use Yii;
  * @property string $title
  * @property string $discription
  * @property string $short_discription
- * @property string $numbers_img
+ * @property string $posts_img
  *
  * @property Comments[] $comments
  * @property Categories $idCategories
@@ -22,6 +23,9 @@ class Posts extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    use Path;
+    public $checkbox = [];
+
     public static function tableName()
     {
         return 'posts';
@@ -33,12 +37,12 @@ class Posts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_categories'], 'integer','message'=>'Данное поле может принимать только целые числа'],
-            [['discription', 'title','short_discription','id_categories'], 'required','message'=>'Вы не заполнили это поле'],
+            [['id_categories'], 'integer', 'message' => 'Данное поле может принимать только целые числа'],
+            [['discription', 'title', 'short_discription', 'id_categories'], 'required', 'message' => 'Вы не заполнили это поле'],
             [['discription'], 'string'],
             [['title'], 'string', 'max' => 50],
             [['short_discription'], 'string', 'max' => 100],
-            [['numbers_img'], 'string']
+            [['posts_img'], 'string']
         ];
     }
 
@@ -53,7 +57,7 @@ class Posts extends \yii\db\ActiveRecord
             'title' => 'Заголовок(Title)',
             'discription' => 'Описание (Discription)',
             'short_discription' => 'Краткое описание (Short Discription)',
-            'numbers_img' => 'Номера Фотографий',
+            'posts_img' => 'Номера Фотографий',
         ];
     }
 
@@ -81,7 +85,7 @@ class Posts extends \yii\db\ActiveRecord
             ->all();
     }
 
-    public static function exceptCurrentPost($id_categories,$id_post)
+    public static function exceptCurrentPost($id_categories, $id_post)
     {
         self::find()
             ->where(['id_categories' => $id_categories])
@@ -93,6 +97,30 @@ class Posts extends \yii\db\ActiveRecord
     public function getNameCategory($id)
     {
         return Categories::findOne(['id_categories' => $id])->title;
+    }
+
+    public function deletePhotos($id, $deleteImg)
+    {
+        $model = $this->findOne($id);
+        $allImg = $this->getArrayAllImg($id);
+        $saveImg = array_diff($allImg, $deleteImg);
+        $deleteImg = array_diff($deleteImg, array_diff($deleteImg, $allImg));
+
+        foreach ($deleteImg as $val) {
+            if ($val) {
+                unlink($this->getPostPath($model->id_categories, $model->id_posts) . '/' . $val);
+            }
+        }
+        $model->posts_img = '';
+        $model->save();
+        $model->posts_img .= implode(',', $saveImg);
+        $model->posts_img = trim(preg_replace('/^,/', '', $model->posts_img));
+        $model->save();
+    }
+
+    public function getArrayAllImg($id)
+    {
+        return explode(',', $this->findOne($id)->posts_img);
     }
 
 }

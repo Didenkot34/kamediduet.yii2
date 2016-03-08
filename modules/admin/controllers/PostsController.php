@@ -22,7 +22,8 @@ use app\Traits\Path;
 class PostsController extends Controller
 {
     use Path;
-    public $property = 'numbers_img';
+    public $property = 'posts_img';
+    public $deleteImg = [];
     public $layout = 'adminpanel';
 
     public function beforeAction($action)
@@ -96,7 +97,7 @@ class PostsController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
-            $uploadModel->upload($this->getPostPath($model->id_categories,$model->id_posts), $model,$this->property);
+            $uploadModel->upload($this->getPostPath($model->id_categories, $model->id_posts), $model, $this->property);
 
             $cache->set('posts', false);
 
@@ -117,15 +118,23 @@ class PostsController extends Controller
      */
     public function actionUpdate($id)
     {
+        $posts = new Posts();
+
+        if (isset($_POST['Posts']['checkbox']) && !empty($_POST['Posts']['checkbox'])) {
+            $this->deleteImg = $_POST['Posts']['checkbox'];
+            $posts->deletePhotos($id,$this->deleteImg);
+        }
+
         $cache = Yii::$app->cache;
         $model = $this->findModel($id);
-        $path = $this->getPostPath($model->id_categories,$model->id_posts);
+        $path = $this->getPostPath($model->id_categories, $model->id_posts);
         $uploadModel = new UploadForm();
+
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $uploadModel->imageFiles = UploadedFile::getInstances($uploadModel, 'imageFiles');
-            $uploadModel->upload($path, $model,$this->property);
+            $uploadModel->upload($path, $model, $this->property);
             $cache->set('posts', false);
 
             return $this->redirect(['view', 'id' => $model->id_posts]);
@@ -133,7 +142,8 @@ class PostsController extends Controller
 
             return $this->render('update', [
                 'model' => $model,
-                'uploadModel' => $uploadModel
+                'uploadModel' => $uploadModel,
+                'arrayAllImg' => $posts->getArrayAllImg($id)
             ]);
         }
     }
@@ -148,12 +158,14 @@ class PostsController extends Controller
     {
         $cache = Yii::$app->cache;
         $model = $this->findModel($id);
-        $this->removeDirectory($this->getPostPath($model->id_categories,$model->id_posts));
+        $this->removeDirectory($this->getPostPath($model->id_categories, $model->id_posts));
         $model->delete();
         $cache->set('posts', false);
 
         return $this->redirect(['index']);
     }
+
+
 
     /**
      * Finds the Posts model based on its primary key value.
@@ -170,4 +182,6 @@ class PostsController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
 }

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\admin\models\Posts */
+/* @var $model app\models\Posts */
 
 $this->title = $model->title;
 ?>
@@ -45,7 +45,7 @@ $this->title = $model->title;
             'title',
             'discription:ntext',
             'short_discription',
-            'numbers_img',
+            'posts_img',
         ],
     ]) ?>
 
