@@ -37,7 +37,7 @@ class IndexController extends Controller
 
         $comments = $cache->get('comments');
         if ($comments === false) {
-            $comments = Comments::getAllComments();
+            $comments = Comments::getComments();
             $cache->set('comments', $comments, 24*60*60);
         }
 
